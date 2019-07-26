@@ -27,7 +27,7 @@
 	$jkwi	=mysql_num_rows($jmlkwi);
 		
 	$now	=date("Y");
-	$selTah	=mysql_query("SELECT SUM(pagu_ln) as `pagu_ln`, SUM(pagu_dn) as `pagu_dn`,SUM(pagu_dk) as `pagu_dk` FROM tb_ta WHERE tahun='$now'");
+	$selTah	=mysql_query("SELECT id_ta, tahun, SUM(pagu_ln) as `pagu_ln`, SUM(pagu_dn) as `pagu_dn`, SUM(pagu_dk) as `pagu_dk` FROM tb_ta WHERE tahun='$now'");
 	$tah	=mysql_fetch_array($selTah);
 	
 	$total_ln	=mysql_query("SELECT SUM(jumlah) AS jml FROM tb_kwitansi WHERE ta IN (SELECT CAST(id_ta as CHAR) FROM tb_ta WHERE tahun='$now') AND jns_tuj='Luar Negeri'"); 

@@ -21,7 +21,8 @@
 	$sheet->setCellValue("D3", "Pagu Dalam Negeri");
 	$sheet->setCellValue("F3", "Pagu Dalam Kota");
 	
-	$expTa	=mysql_query("SELECT * FROM tb_ta ORDER BY id_ta");
+	$id_satker = $_SESSION['id_satker'];
+	$expTa	=mysql_query("SELECT * FROM tb_ta WHERE id_satker=$id_satker ORDER BY id_ta");
 	$i	=4; //Dimulai dengan baris ke
 	$eno	=1;
 	while($eta	=mysql_fetch_array($expTa)){
@@ -56,7 +57,7 @@
 <h1 class="page-header">Master <small>Tahun Anggaran&nbsp;</small></h1>
 <!-- end page-header -->
 <?php
-	$query	=mysql_query("SELECT * FROM tb_ta ORDER BY id_ta");
+	$query	=mysql_query("SELECT * FROM tb_ta WHERE id_satker=$id_satker ORDER BY id_ta");
 ?>
 <div class="row">
 	<!-- begin col-12 -->

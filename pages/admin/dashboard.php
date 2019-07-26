@@ -164,7 +164,7 @@
 					type: 'column'
 				},   
 				title: {
-					text: "Statistik SPD Tahun <?php echo $now?> pada <?= $unit['satker']?>"
+					text: "Statistik SPD Tahun <?php echo $tah['tahun']?> pada <?= $unit['satker']?>"
 				},
 				xAxis: {
 					categories: ['Bulan']

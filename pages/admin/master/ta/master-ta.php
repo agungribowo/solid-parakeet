@@ -1,6 +1,7 @@
 <div class="row">
 <?php		
 	include "../../config/koneksi.php";
+	$id_satker = $_SESSION['id_satker'];
 	function kdauto($tabel, $inisial){
 		$struktur   = mysql_query("SELECT * FROM $tabel");
 		$field      = mysql_field_name($struktur,0);
@@ -29,7 +30,7 @@
 	$pagu_dn	=$_POST['pagu_dn'];
 	$pagu_dk	=$_POST['pagu_dk'];
 	
-	$ceknm	=mysql_num_rows (mysql_query("SELECT tahun FROM tb_ta WHERE tahun='$_POST[tahun]'"));
+	$ceknm	=mysql_num_rows (mysql_query("SELECT tahun FROM tb_ta WHERE tahun='$_POST[tahun]' AND id_satker=$id_satker"));
 	
 		if (empty($_POST['tahun']) || empty($_POST['pagu_ln'])) {
 			$_SESSION['pesan'] = "Oops! Please fill all column ...";
@@ -41,7 +42,7 @@
 		}
 		
 		else{
-		$insert = mysql_query("INSERT INTO tb_ta (id_ta, tahun, pagu_ln, pagu_dn, pagu_dk) VALUES ('$id_ta', '$tahun', '$pagu_ln', '$pagu_dn', '$pagu_dk')");
+		$insert = mysql_query("INSERT INTO tb_ta (id_ta, tahun, pagu_ln, pagu_dn, pagu_dk, id_satker) VALUES ('$id_ta', '$tahun', '$pagu_ln', '$pagu_dn', '$pagu_dk', $id_satker)");
 		
 		if($insert){
 			$_SESSION['pesan'] = "Good! Insert master tahun anggaran success ...";

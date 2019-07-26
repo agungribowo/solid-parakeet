@@ -1,5 +1,6 @@
 <div class="row">
 <?php
+	$id_satker = $_SESSION['id_satker'];
 	if (isset($_GET['id_ta'])) {
 	$id_ta = $_GET['id_ta'];
 	}
@@ -17,7 +18,7 @@
 	$pagu_dn	=$_POST['pagu_dn'];
 	$pagu_dk	=$_POST['pagu_dk'];
 	
-	$ceknm	=mysql_num_rows (mysql_query("SELECT tahun FROM tb_ta WHERE tahun='$_POST[tahun]' AND tahun!='$notnm'"));
+	$ceknm	=mysql_num_rows (mysql_query("SELECT tahun FROM tb_ta WHERE tahun='$_POST[tahun]' AND tahun!='$notnm' AND id_satker=$id_satker"));
 		
 		if (empty($_POST['tahun']) || empty($_POST['pagu_ln'])) {
 			$_SESSION['pesan'] = "Oops! Please fill all column ...";
@@ -29,7 +30,7 @@
 		}
 		
 		else{
-		$update= mysql_query ("UPDATE tb_ta SET tahun='$tahun', pagu_ln='$pagu_ln', pagu_dn='$pagu_dn', pagu_dk='$pagu_dk' WHERE id_ta='$id_ta'");
+		$update= mysql_query ("UPDATE tb_ta SET tahun='$tahun', pagu_ln='$pagu_ln', pagu_dn='$pagu_dn', pagu_dk='$pagu_dk' WHERE id_ta='$id_ta' AND id_satker=$id_satker");
 			if($update){
 				$_SESSION['pesan'] = "Good! Edit master tahun anggaran success ...";
 				header("location:index.php?page=form-view-data-ta");
