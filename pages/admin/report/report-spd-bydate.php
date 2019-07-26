@@ -167,7 +167,14 @@
 	<!-- end profile-section -->
 </div>
 
+
 <script> // 500 = 0,5 s
+	Date.prototype.addDays = function(days) {
+		var date = new Date(this.valueOf());
+		date.setDate(date.getDate() + days);
+		return date;
+	}
+
 	$(document).ready(function(){setTimeout(function(){$(".pesan").fadeIn('slow');}, 500);});
 	setTimeout(function(){$(".pesan").fadeOut('slow');}, 7000);
 	$(document).ready(function(){
@@ -181,10 +188,29 @@
 		var no = 1;
 		rows.each(function(idx, value) {
 		var $tr = $(value);
+
 		if (idx>0) 
 		if ($tr.context.cells[1].innerText == $(rows[idx-1]).context.cells[1].innerText) {
 	  	    $($tr.context.cells[1]).css('color', 'rgba(0, 0, 0, 0)');
-			  $($tr.context.cells[0]).text('');
+			$($tr.context.cells[0]).text('');
+
+			let st = $tr.context.cells[6].innerText;
+			let st2 = $(rows[idx-1]).context.cells[6].innerText;
+			let hr = parseInt($tr.context.cells[7].innerText);
+			let hr2 = $(rows[idx-1]).context.cells[7].innerText;
+
+			let pattern = /(\d{2})\-(\d{2})\-(\d{4})/;
+			let dt = new Date(st.replace(pattern,'$3-$2-$1'));
+			let dt2 = new Date(st2.replace(pattern,'$3-$2-$1'));
+
+			let limit = dt.addDays(hr);
+			let limit2 = dt2.addDays(hr2);
+			
+			if (dt<=limit2 && dt>=dt2) {
+				$($tr.context.cells[6]).css('background', 'red');
+				$($tr.context.cells[7]).css('background', 'red');
+			}
+				
 		} else {
 			no++;
 			$($tr.context.cells[0]).text(no);
