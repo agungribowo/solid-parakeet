@@ -236,7 +236,7 @@ $pdf->SetFont('helvetica', '', 9);
 	$selTuj	=mysql_query("SELECT * FROM tb_tujuan WHERE id_tujuan='$data[tujuan]'");
 	$tuj	=mysql_fetch_array($selTuj);
 	
-	$selSat	=mysql_query("SELECT * FROM tb_satker WHERE id_satker='$data[satker]'");
+	$selSat	=mysql_query("SELECT * FROM tb_satker WHERE id_satker='$data[id_satker]'");
 	$sat	=mysql_fetch_array($selSat);
 	
 	$id_satker = $data['id_satker'];
@@ -333,11 +333,11 @@ $head ='
 			<tr>
 				<td></td>';	
 				if (empty($log['logo2'])){
-				$head .='<td rowspan="3" align="center"><img src="../../../assets/img/default.png" width="70" height="70"/></td>';
-				}
-				else{
-				$head .='<td rowspan="3" align="center"><img src="../../../assets/img/'.$log['logo2'].'" width="70" height="70"/></td>';
-				}
+					$head .='<td width="194"><img src="../../../assets/img/default.png" width="70" height="70"/></td>';
+					}
+					else{
+					$head .='<td width="194"><img src="../../../assets/img/'.$log['logo2'].'" width="70" height="70"/></td>';
+					}
 		$head .='<td><font size="8"><i>Code No.</i></font></td>
 				<td></td>
 			</tr>
