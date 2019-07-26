@@ -1,0 +1,144 @@
+<!-- begin breadcrumb -->
+<ol class="breadcrumb pull-right">
+	<li>
+		<?php
+			if (isset($_SESSION['pesan']) && $_SESSION['pesan'] <> '') {
+				echo "<span class='pesan'><div class='btn btn-sm btn-inverse m-b-10'><i class='fa fa-bell text-warning'></i>&nbsp; ".$_SESSION['pesan']." &nbsp; &nbsp; &nbsp;</div></span>";
+			}
+			$_SESSION['pesan'] ="";
+		?>
+	</li>
+</ol>
+<!-- end breadcrumb -->
+<!-- begin page-header -->
+<h1 class="page-header">Report<small> SPD</small></h1>
+<!-- end page-header -->
+<div class="profile-container">
+	<!-- begin profile-section -->
+	<div class="profile-section">
+		<div class="panel-body">
+			<form action="index.php?page=report-spd-bydate" class="form-horizontal" method="POST" enctype="multipart/form-data" >
+				<div class="form-group">
+					<label class="col-md-2 control-label">Periode</label>
+					<div class="col-md-3">
+						<div class="input-group date" id="datepicker-disabled-past1" data-date-format="yyyy-mm-dd">
+							<input type="text" name="start" placeholder="Start Date" class="form-control" />
+							<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="input-group date" id="datepicker-disabled-past2" data-date-format="yyyy-mm-dd">
+							<input type="text" name="end" placeholder="End date" class="form-control" />
+							<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<button type="submit" name="report" value="report" class="btn btn-success"><i class="fa fa-search"></i> &nbsp;Get Report</button>&nbsp;
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- end profile-section -->
+	<!-- begin profile-section -->
+	<div class="profile-section">
+		<div class="panel-body">
+			<table id="datatable" class="table table-striped table-bordered nowrap datatable-multi-row" width="100%">
+				<thead>
+					<tr>
+						<th width="4%">No</th>
+						<th>Pegawai</th>
+						<th>Nomor SPD</th>
+						<th>Tgl SPD</th>
+						<th>No Sprin</th>
+						<th>Tujuan</th>
+						<th>Tgl Berangkat</th>
+						<th width="4%">Jumlah Hari</th>
+						<th width="4%">Unit</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php
+						include "../../config/koneksi.php";
+						$no=0;
+						$satker = $_SESSION['id_satker'];
+						$query	=mysql_query("SELECT A.id_nominatif, A.pegawai, A.id_satker, B.nomor, B.tgl, B.keperluan, B.asal, B.tujuan, B.tgl_berangkat, B.tgl_kembali, B.no_sprin FROM tb_nominatif A INNER JOIN tb_spd B ON B.id_spd=A.id_spd WHERE A.id_satker=$satker ORDER BY A.pegawai,B.tgl DESC");
+						while($spd	=mysql_fetch_array($query)){
+						list($y1,$m1,$d1)	=explode ("-",$spd['tgl']);
+						list($y2,$m2,$d2)	=explode ("-",$spd['tgl_berangkat']);
+						$no++
+					?>
+					<tr>
+						<td><?php echo $no?></td>
+						<td><?php
+							$selPeg	=mysql_query("SELECT nama,nip FROM tb_pegawai WHERE id_peg='$spd[pegawai]'");
+							$peg	=mysql_fetch_array($selPeg);
+							echo $peg['nama'].' <br> NIP '.$peg['nip'];
+							?>
+						</td>
+						<td><?php echo $spd['nomor'];?></td>
+						<td><?php echo $d1?>-<?php echo $m1?>-<?php echo $y1?></td>
+						<td><?php echo $spd['no_sprin'];?></td>
+						<td><?php
+							$selTuj	=mysql_query("SELECT tujuan FROM tb_tujuan WHERE id_tujuan='$spd[tujuan]'");
+							$tuj	=mysql_fetch_array($selTuj);
+							echo $tuj['tujuan'];
+							?>
+						</td>
+						<td><?php echo $d2?>-<?php echo $m2?>-<?php echo $y2?></td>
+						<td><?php
+							$brkt	=new DateTime($spd['tgl_berangkat']);
+							$kmbl	=new DateTime($spd['tgl_kembali']);
+							$diff	=$kmbl->diff($brkt);
+							$lama	=($diff->d)+1;
+							echo $lama;
+							?>
+						</td>
+						<td><?php
+							$selSat	=mysql_query("SELECT satker FROM tb_satker WHERE id_satker='$spd[id_satker]'");
+							$tuj	=mysql_fetch_array($selSat);
+							echo $tuj['satker'];
+							?>
+						</td>
+					</tr>
+					<?php
+						}
+					?>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<!-- end profile-section -->
+</div>
+
+<script> // 500 = 0,5 s
+	$(document).ready(function(){setTimeout(function(){$(".pesan").fadeIn('slow');}, 500);});
+	setTimeout(function(){$(".pesan").fadeOut('slow');}, 7000);
+	$(document).ready(function(){
+	$('#datatable').DataTable({
+		"fnDrawCallback": function() {
+		$table = $(this);
+		// for each row in the table body...
+
+		
+		let rows = $table.find("tbody>tr");
+		var no = 1;
+		rows.each(function(idx, value) {
+		var $tr = $(value);
+		if (idx>0) 
+		if ($tr.context.cells[1].innerText == $(rows[idx-1]).context.cells[1].innerText) {
+	  	    $($tr.context.cells[1]).css('color', 'rgba(0, 0, 0, 0)');
+			  $($tr.context.cells[0]).text('');
+		} else {
+			no++;
+			$($tr.context.cells[0]).text(no);
+		}
+	
+  });
+
+ // end if the table has the proper class
+} // end fnDrawCallback()
+	});
+});
+
+</script>
