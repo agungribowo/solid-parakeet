@@ -380,8 +380,8 @@ $pagenom = '<table border="0" cellspacing="0" cellpadding="2" style="margin-bott
 				<td align="center"><font style="text-transform:none">'.$d2.' '.$m2.' '.$y2.'</font></td>
 				<td align="center">'.$lama.'</td>				
 				<td align="right">'.number_format($harian,0,",",".").'</td>	
-				<td align="right">'.number_format($saku,0,",",".").'</td>	
-				<td align="right">'.number_format($inap,0,",",".").'</td>	
+				<td align="right">'.number_format($harian1,0,",",".").'</td>	
+				<td align="right">'.number_format($reprentasi,0,",",".").'</td>	
 				<td align="right">'.number_format($transport,0,",",".").'</td>	
 				<td align="right">'.number_format($lain,0,",",".").'</td>	
 				<td align="right">'.number_format($rin['total'],0,",",".").'</td>	
