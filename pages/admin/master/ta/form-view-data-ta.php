@@ -77,7 +77,7 @@
 				<table id="data-table" class="table table-striped table-bordered nowrap" width="100%">
 					<thead>
 						<tr>
-							<th width="5%"><i class="fa fa-lock bigger-110 hidden-480"></i> ID</th>
+							<!-- <th width="5%"><i class="fa fa-lock bigger-110 hidden-480"></i> ID</th> -->
 							<th>Tahun</th>
 							<th>Pagu Luar Negeri</th>
 							<th>Pagu Dalam Negeri</th>
@@ -90,7 +90,7 @@
 							while($ta		=mysql_fetch_array($query)){
 						?>
 						<tr>
-							<td><?php echo $ta['id_ta']?></td>
+							<!-- <td><?php echo $ta['id_ta']?></td> -->
 							<td><?php echo $ta['tahun']?></td>
 							<td align="right"><?=number_format($ta['pagu_ln'],0,",",".");?></td>
 							<td align="right"><?=number_format($ta['pagu_dn'],0,",",".");?></td>
