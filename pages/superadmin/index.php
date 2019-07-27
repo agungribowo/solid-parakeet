@@ -463,6 +463,17 @@ if($_SESSION['hak_akses']!="Superadmin"){
 			App.init();
 			TableManageResponsive.init();
 			FormPlugins.init();
+
+			$("select").select2();
+
+			$("select").on("select2:select", function (evt) {
+			var element = evt.params.data.element;
+			var $element = $(element);
+
+			$element.detach();
+			$(this).append($element);
+			$(this).trigger("change");
+			});	
 		});
 	</script>
 </body>
