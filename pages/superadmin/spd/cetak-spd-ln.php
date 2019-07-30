@@ -519,6 +519,7 @@ $page2 = '
 				<td style="border-right-width: solid;">'.$tuj['tujuan'].'</td>
 			</tr>
 			<tr>
+			
 				<td><u>Kepala Kantor</u><br /><font size="8"><i>Head Of Office</i></font></td>
 				<td>:</td>
 				<td>.......................</td>
@@ -528,9 +529,8 @@ $page2 = '
 			</tr>
 			<tr>
 				<td colspan="3"></td>
-				<td><u>Kepala Kantor</u><br /><font size="8"><i>Head Of Office</i></font></td>
-				<td>:</td>
-				<td style="border-right-width: solid;">.......................</td>
+				<td style="border-right-width: solid;" align="center" colspan="3">'.$ttd['teks'].'</td>
+				
 			</tr>
 			<tr>
 				<td colspan="3" height="45"></td>
@@ -538,7 +538,7 @@ $page2 = '
 			</tr>
 			<tr>
 				<td colspan="3" height="25">(.......................................................)</td>
-				<td colspan="3" height="25" style="border-right-width: solid;">(.......................................................)</td>
+				<td colspan="3" height="25" align="center" style="border-right-width: solid;"><u>'.$kep['nama'].'</u><br/>NIP '.$kep['nip'].'</td>
 			</tr>
 			<tr>
 				<td width="20" style="border-top-width: solid; border-left-width: solid;" rowspan="6">III.</td>

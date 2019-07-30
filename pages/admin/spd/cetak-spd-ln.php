@@ -527,19 +527,18 @@ $page2 = '
 				<td style="border-right-width: solid;">'.$d2.' '.$m2.' '.$y2.'</td>
 			</tr>
 			<tr>
-				<td colspan="3"></td>
-				<td><u>Kepala Kantor</u><br /><font size="8"><i>Head Of Office</i></font></td>
-				<td>:</td>
-				<td style="border-right-width: solid;">.......................</td>
+			<td colspan="3"></td>
+			<td style="border-right-width: solid;" align="center" colspan="3">'.$ttd['teks'].'</td>
+
 			</tr>
 			<tr>
 				<td colspan="3" height="45"></td>
 				<td colspan="3" height="45" style="border-right-width: solid;"></td>
 			</tr>
 			<tr>
-				<td colspan="3" height="25">(.......................................................)</td>
-				<td colspan="3" height="25" style="border-right-width: solid;">(.......................................................)</td>
-			</tr>
+			<td colspan="3" height="25">(.......................................................)</td>
+			<td colspan="3" height="25" align="center" style="border-right-width: solid;"><u>'.$kep['nama'].'</u><br/>NIP '.$kep['nip'].'</td>
+		</tr>
 			<tr>
 				<td width="20" style="border-top-width: solid; border-left-width: solid;" rowspan="6">III.</td>
 				<td width="140" style="border-top-width: solid;"><u>Tiba di</u><br /><font size="8"><i>Arrival at</i></font></td>

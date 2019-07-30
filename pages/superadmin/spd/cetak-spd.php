@@ -503,13 +503,13 @@ $page2 = '<table cellpadding="0" border="0" align="center">
 				<td height="20" style="border-right-width: solid;">'.$d2.' '.$m2.' '.$y2.'</td>
 			</tr>
 			<tr>
-				<td colspan="3" height="25" style="border-right-width: solid;">Kepala .................................................</td>
+				<td colspan="3" height="25"  align="center" style="border-right-width: solid;">'.$ttd['teks'].'</td>
 			</tr>
 			<tr>
 				<td colspan="3" height="45" style="border-right-width: solid;"></td>
 			</tr>
 			<tr>
-				<td colspan="3" height="25" style="border-right-width: solid;">(.......................................................)</td>
+				<td colspan="3" height="25"  align="center" style="border-right-width: solid;"><u>'.$kep['nama'].'</u><br/>NIP '.$kep['nip'].' </td>
 			</tr>
 			<tr>
 				<td width="20" style="border-top-width: solid; border-left-width: solid;" rowspan="6">II.</td>
