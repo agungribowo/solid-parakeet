@@ -80,7 +80,7 @@
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
+										<tr>
 												<td>1</td>
 												<td>Uang Harian 100% di <?=$tuj['tujuan']?></td>
 												<td><?=$data['jml_harian']?></td>
@@ -91,7 +91,7 @@
 											</tr>
 											<tr>
 												<td>2</td>
-												<td>Uang Harian 40% / 30% di <?=$tuj['tujuan']?></td>
+												<td>Uang Harian 40% di <?=$tuj['tujuan']?></td>
 												<td><?=$data['jml_harian1']?></td>
 												<td>x</td>
 												<td align="right"><?=number_format($data['nilai_harian1'],0,",",".");?></td>
@@ -100,6 +100,15 @@
 											</tr>
 											<tr>
 												<td>3</td>
+												<td>Uang Harian 30% di <?=$tuj['tujuan']?></td>
+												<td><?=$data['jml_harian2']?></td>
+												<td>x</td>
+												<td align="right"><?=number_format($data['nilai_harian2'],0,",",".");?></td>
+												<td align="right"><?=number_format($data['jml_harian2']*$data['nilai_harian1'],0,",",".");?></td>
+												<td><?=$data['ket_harian2']?></td>
+											</tr>
+											<tr>
+												<td>4</td>
 												<td>Transportasi PP <?=$spd['asal']?> - <?=$tuj['tujuan']?></td>
 												<td><?=$data['jml_berangkat']?></td>
 												<td>x</td>
@@ -108,7 +117,7 @@
 												<td><?=$data['ket_berangkat']?></td>
 											</tr>
 											<tr>
-												<td>4</td>
+												<td>5</td>
 												<td>Uang Reprentasi</td>
 												<td><?=$data['jml_reprentasi']?></td>
 												<td>x</td>
@@ -117,7 +126,7 @@
 												<td><?=$data['ket_reprentasi']?></td>
 											</tr>
 											<tr>
-												<td>5</td>
+												<td>6</td>
 												<td><?=$data['uraian_lain']?></td>
 												<td><?=$data['jml_lain']?></td>
 												<td>x</td>

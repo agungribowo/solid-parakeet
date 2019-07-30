@@ -327,12 +327,13 @@ $pagenom = '<table border="0" cellspacing="0" cellpadding="2" style="margin-bott
 		<table border="1" cellspacing="0" cellpadding="2">
 			<tr>
 				<td width="25" height="24" align="center"><b>NO</b></td>	
-				<td width="205" align="center"><b>NAMA</b></td>
-				<td width="100" align="center"><b>TUJUAN</b></td>
-				<td width="100" align="center"><b>TGl. BERANGKAT</b></td>
+				<td width="180" align="center"><b>NAMA</b></td>
+				<td width="60" align="center"><b>TUJUAN</b></td>
+				<td width="80" align="center"><b>TGl. BERANGKAT</b></td>
 				<td width="50" align="center"><b>HARI JALDIS</b></td>
 				<td width="90" align="center"><b>UANG HARIAN 100%</b></td>
-				<td width="90" align="center"><b>UANG HARIAN 40% / 30%</b></td>
+				<td width="90" align="center"><b>UANG HARIAN 40%</b></td>
+				<td width="90" align="center"><b>UANG HARIAN 30%</b></td>
 				<td width="90" align="center"><b>REPRENTASI</b></td>
 				<td width="90" align="center"><b>TRANSPORT</b></td>
 				<td width="90" align="center"><b>LAIN-LAIN</b></td>
@@ -352,6 +353,7 @@ $pagenom = '<table border="0" cellspacing="0" cellpadding="2" style="margin-bott
 				<td align="center"><b>10</b></td>	
 				<td align="center"><b>11</b></td>	
 				<td align="center"><b>12</b></td>	
+				<td align="center"><b>13</b></td>
 			</tr>';
 			$selRin=mysql_query("SELECT * FROM tb_rincian WHERE id_spd='$id_spd'");
 			$no=1;
@@ -362,6 +364,7 @@ $pagenom = '<table border="0" cellspacing="0" cellpadding="2" style="margin-bott
 				
 				$harian	=$rin['jml_harian']*$rin['nilai_harian'];
 				$harian1=$rin['jml_harian1']*$rin['nilai_harian1'];
+				$harian2=$rin['jml_harian2']*$rin['nilai_harian2'];
 				$reprentasi=$rin['jml_reprentasi']*$rin['nilai_reprentasi'];
 				$saku=$rin['jml_saku']*$rin['nilai_saku'];
 				$inap=$rin['jml_inap']*$rin['nilai_inap'];
@@ -373,7 +376,6 @@ $pagenom = '<table border="0" cellspacing="0" cellpadding="2" style="margin-bott
 				$sub	=mysql_fetch_assoc($subtot);
 				$total		=$sub['tot'];
 	
-
 	$pagenom .='<tr>
 				<td align="center" height="30">'.$no++.'</td>	
 				<td><font style="text-transform:none">'.$list['nama'].'</font></td>	
@@ -382,6 +384,7 @@ $pagenom = '<table border="0" cellspacing="0" cellpadding="2" style="margin-bott
 				<td align="center">'.$lama.'</td>				
 				<td align="right">'.number_format($harian,0,",",".").'</td>	
 				<td align="right">'.number_format($harian1,0,",",".").'</td>	
+				<td align="right">'.number_format($harian2,0,",",".").'</td>	
 				<td align="right">'.number_format($reprentasi,0,",",".").'</td>	
 				<td align="right">'.number_format($transport,0,",",".").'</td>	
 				<td align="right">'.number_format($lain,0,",",".").'</td>	

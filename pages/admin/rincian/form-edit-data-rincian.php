@@ -66,10 +66,10 @@
 					<div class="form-group">
 						<label class="col-md-3 control-label">Biaya Penginapan di <?=$tuj['tujuan']?></label>
 						<div class="col-md-2">
-							<input type="text" name="jml_inap" maxlength="1" value="<?=$data['jml_inap']?>" class="form-control" />
+							<input type="number" name="jml_inap" maxlength="1" value="<?=$data['jml_inap']?>" class="form-control" />
 						</div>
 						<div class="col-md-3">
-							<input type="text" name="nilai_inap" maxlength="11" value="<?=$data['nilai_inap']?>" class="form-control" />
+							<input type="number" name="nilai_inap" maxlength="11" value="<?=$data['nilai_inap']?>" class="form-control" />
 						</div>
 						<div class="col-md-3">
 							<input type="text" name="ket_inap" maxlength="255" value="<?=$data['ket_inap']?>" class="form-control" />
@@ -78,10 +78,10 @@
 					<div class="form-group">
 						<label class="col-md-3 control-label">Transportasi <?=$spd['asal']?> - <?=$tuj['tujuan']?></label>
 						<div class="col-md-2">
-							<input type="text" name="jml_berangkat" maxlength="1" value="<?=$data['jml_berangkat']?>" class="form-control" />
+							<input type="number" name="jml_berangkat" maxlength="1" value="<?=$data['jml_berangkat']?>" class="form-control" />
 						</div>
 						<div class="col-md-3">
-							<input type="text" name="nilai_berangkat" maxlength="11" value="<?=$data['nilai_berangkat']?>" class="form-control" />
+							<input type="number" name="nilai_berangkat" maxlength="11" value="<?=$data['nilai_berangkat']?>" class="form-control" />
 						</div>
 						<div class="col-md-3">
 							<input type="text" name="ket_berangkat" maxlength="255" value="<?=$data['ket_berangkat']?>" class="form-control" />
@@ -90,10 +90,10 @@
 					<div class="form-group">
 						<label class="col-md-3 control-label">Transportasi <?=$tuj['tujuan']?> - <?=$spd['asal']?></label>
 						<div class="col-md-2">
-							<input type="text" name="jml_kembali" maxlength="1" value="<?=$data['jml_kembali']?>" class="form-control" />
+							<input type="number" name="jml_kembali" maxlength="1" value="<?=$data['jml_kembali']?>" class="form-control" />
 						</div>
 						<div class="col-md-3">
-							<input type="text" name="nilai_kembali" maxlength="11" value="<?=$data['nilai_kembali']?>" class="form-control" />
+							<input type="number" name="nilai_kembali" maxlength="11" value="<?=$data['nilai_kembali']?>" class="form-control" />
 						</div>
 						<div class="col-md-3">
 							<input type="text" name="ket_kembali" maxlength="255" value="<?=$data['ket_kembali']?>" class="form-control" />
@@ -102,10 +102,10 @@
 					<div class="form-group">
 						<label class="col-md-3 control-label">Taxi <?=$spd['asal']?> PP</label>
 						<div class="col-md-2">
-							<input type="text" name="jml_taxi_berangkat" maxlength="1" value="<?=$data['jml_taxi_berangkat']?>" class="form-control" />
+							<input type="number" name="jml_taxi_berangkat" maxlength="1" value="<?=$data['jml_taxi_berangkat']?>" class="form-control" />
 						</div>
 						<div class="col-md-3">
-							<input type="text" name="nilai_taxi_berangkat" maxlength="11" value="<?=$data['nilai_taxi_berangkat']?>" class="form-control" />
+							<input type="number" name="nilai_taxi_berangkat" maxlength="11" value="<?=$data['nilai_taxi_berangkat']?>" class="form-control" />
 						</div>
 						<div class="col-md-3">
 							<input type="text" name="ket_taxi_berangkat" maxlength="255" value="<?=$data['ket_taxi_berangkat']?>" class="form-control" />
@@ -114,10 +114,10 @@
 					<div class="form-group">
 						<label class="col-md-3 control-label">Taxi <?=$tuj['tujuan']?> PP</label>
 						<div class="col-md-2">
-							<input type="text" name="jml_taxi_kembali" maxlength="1" value="<?=$data['jml_taxi_kembali']?>" class="form-control" />
+							<input type="number" name="jml_taxi_kembali" maxlength="1" value="<?=$data['jml_taxi_kembali']?>" class="form-control" />
 						</div>
 						<div class="col-md-3">
-							<input type="text" name="nilai_taxi_kembali" maxlength="11" value="<?=$data['nilai_taxi_kembali']?>" class="form-control" />
+							<input type="number" name="nilai_taxi_kembali" maxlength="11" value="<?=$data['nilai_taxi_kembali']?>" class="form-control" />
 						</div>
 						<div class="col-md-3">
 							<input type="text" name="ket_taxi_kembali" maxlength="255" value="<?=$data['ket_taxi_kembali']?>" class="form-control" />
@@ -126,10 +126,10 @@
 					<div class="form-group">
 						<label class="col-md-3 control-label">Uang Harian</label>
 						<div class="col-md-2">
-							<input type="text" name="jml_harian" maxlength="1" value="<?=$data['jml_harian']?>" class="form-control" />
+							<input type="number" name="jml_harian" maxlength="1" value="<?=$data['jml_harian']?>" class="form-control" />
 						</div>
 						<div class="col-md-3">
-							<input type="text" name="nilai_harian" maxlength="11" value="<?=$data['nilai_harian']?>" class="form-control" />
+							<input type="number" name="nilai_harian" maxlength="11" value="<?=$data['nilai_harian']?>" class="form-control" />
 						</div>
 						<div class="col-md-3">
 							<input type="text" name="ket_harian" maxlength="255" value="<?=$data['ket_harian']?>" class="form-control" />
@@ -138,10 +138,10 @@
 					<div class="form-group">
 						<label class="col-md-3 control-label">Uang Saku Rapat</label>
 						<div class="col-md-2">
-							<input type="text" name="jml_saku" maxlength="1" value="<?=$data['jml_saku']?>" class="form-control" />
+							<input type="number" name="jml_saku" maxlength="1" value="<?=$data['jml_saku']?>" class="form-control" />
 						</div>
 						<div class="col-md-3">
-							<input type="text" name="nilai_saku" maxlength="11" value="<?=$data['nilai_saku']?>" class="form-control" />
+							<input type="number" name="nilai_saku" maxlength="11" value="<?=$data['nilai_saku']?>" class="form-control" />
 						</div>
 						<div class="col-md-3">
 							<input type="text" name="ket_saku" maxlength="255" value="<?=$data['ket_saku']?>" class="form-control" />
@@ -156,10 +156,10 @@
 					<div class="form-group">
 						<label class="col-md-3 control-label"></label>
 						<div class="col-md-2">
-							<input type="text" name="jml_lain" maxlength="1" value="<?=$data['jml_lain']?>" class="form-control" />
+							<input type="number" name="jml_lain" maxlength="1" value="<?=$data['jml_lain']?>" class="form-control" />
 						</div>
 						<div class="col-md-3">
-							<input type="text" name="nilai_lain" maxlength="11" value="<?=$data['nilai_lain']?>" class="form-control" />
+							<input type="number" name="nilai_lain" maxlength="11" value="<?=$data['nilai_lain']?>" class="form-control" />
 						</div>
 						<div class="col-md-3">
 							<input type="text" name="ket_lain" maxlength="255" value="<?=$data['ket_lain']?>" class="form-control" />
@@ -168,7 +168,7 @@
 					<div class="form-group">
 						<label class="col-md-3 control-label">Uang Muka</label>
 						<div class="col-md-8">
-							<input type="text" name="uang_muka" maxlength="11" value="<?=$data['uang_muka']?>" class="form-control" />
+							<input type="number" name="uang_muka" maxlength="11" value="<?=$data['uang_muka']?>" class="form-control" />
 						</div>
 					</div>
 					<div class="form-group">

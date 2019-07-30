@@ -97,7 +97,7 @@ if (isset($_GET['id_spd']) AND ($_GET['id_peg'])) {
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-md-3 control-label">Uang Harian 40% / 30% di <?=$tuj['tujuan']?></label>
+						<label class="col-md-3 control-label">Uang Harian 40% di <?=$tuj['tujuan']?></label>
 						<div class="col-md-2">
 							<input type="number" name="jml_harian1" maxlength="1" class="form-control" />
 						</div>
@@ -106,6 +106,18 @@ if (isset($_GET['id_spd']) AND ($_GET['id_peg'])) {
 						</div>
 						<div class="col-md-3">
 							<input type="text" name="ket_harian1" maxlength="255" class="form-control" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label">Uang Harian 30% di <?=$tuj['tujuan']?></label>
+						<div class="col-md-2">
+							<input type="number" name="jml_harian2" maxlength="1" class="form-control" />
+						</div>
+						<div class="col-md-3">
+							<input type="number" name="nilai_harian2" maxlength="11" class="form-control" />
+						</div>
+						<div class="col-md-3">
+							<input type="text" name="ket_harian2" maxlength="255" class="form-control" />
 						</div>
 					</div>
 					<div class="form-group">

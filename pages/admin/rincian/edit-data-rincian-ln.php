@@ -21,6 +21,9 @@
 	$jml_harian1		=$_POST['jml_harian1'];	
 	$nilai_harian1		=$_POST['nilai_harian1'];	
 	$ket_harian1		=$_POST['ket_harian1'];
+	$jml_harian2		=$_POST['jml_harian2'];	
+	$nilai_harian2		=$_POST['nilai_harian2'];	
+	$ket_harian2		=$_POST['ket_harian2'];
 	
 	//$jml_pasport		=$_POST['jml_pasport'];	
 	//$nilai_pasport	=$_POST['nilai_pasport'];	
@@ -38,13 +41,13 @@
 	
 	$sumberangkat		=$jml_berangkat * $nilai_berangkat;	
 	$sumharian			=$jml_harian * $nilai_harian;
-	$sumharian1			=$jml_harian1 * $nilai_harian1;
+	$sumharian2			=$jml_harian2 * $nilai_harian2;
 	//$sumpasport			=$jml_pasport * $nilai_pasport;
 	$sumreprentasi		=$jml_reprentasi * $nilai_reprentasi;
 	$sumlain			=$jml_lain * $nilai_lain;
-	$id_satker = $_SESSION['id_satker'];
+	$id_satker 			= $_SESSION['id_satker'];
 
-	$total				=$sumberangkat+$sumharian+$sumharian1+$sumreprentasi+$sumlain;
+	$total				=$sumberangkat+$sumharian+$sumharian1+$sumharian2+$sumreprentasi+$sumlain;
 	
 		//if (empty($_POST['jml_inap']) || empty($_POST['nilai_inap']) || empty($_POST['jml_berangkat']) || empty($_POST['nilai_berangkat']) || empty($_POST['jml_kembali']) || empty($_POST['nilai_kembali'])) {
 			//$_SESSION['pesan'] = "Oops! Please fill all column ...";
@@ -52,7 +55,7 @@
 		//}	//	
 		
 		//else{//
-		$update= mysql_query ("UPDATE tb_rincian SET jml_berangkat='$jml_berangkat', nilai_berangkat='$nilai_berangkat', ket_berangkat='$ket_berangkat', jml_harian='$jml_harian', nilai_harian='$nilai_harian', ket_harian='$ket_harian', jml_harian1='$jml_harian1', nilai_harian1='$nilai_harian1', ket_harian1='$ket_harian1', jml_reprentasi='$jml_reprentasi', nilai_reprentasi='$nilai_reprentasi', ket_reprentasi='$ket_reprentasi', uraian_lain='$uraian_lain', jml_lain='$jml_lain', nilai_lain='$nilai_lain', ket_lain='$ket_lain', uang_muka='$uang_muka', total='$total' WHERE id_rincian='$id_rincian'  and id_satker='$id_satker'");
+		$update= mysql_query ("UPDATE tb_rincian SET jml_berangkat='$jml_berangkat', nilai_berangkat='$nilai_berangkat', ket_berangkat='$ket_berangkat', jml_harian='$jml_harian', nilai_harian='$nilai_harian', ket_harian='$ket_harian', jml_harian1='$jml_harian1', nilai_harian1='$nilai_harian1', ket_harian1='$ket_harian1', jml_harian2='$jml_harian2', nilai_harian2='$nilai_harian2', ket_harian2='$ket_harian2', jml_reprentasi='$jml_reprentasi', nilai_reprentasi='$nilai_reprentasi', ket_reprentasi='$ket_reprentasi', uraian_lain='$uraian_lain', jml_lain='$jml_lain', nilai_lain='$nilai_lain', ket_lain='$ket_lain', uang_muka='$uang_muka', total='$total' WHERE id_rincian='$id_rincian'  and id_satker='$id_satker'");
 		
 		if($update){
 				$_SESSION['pesan'] = "Good! Edit rincian success ...";

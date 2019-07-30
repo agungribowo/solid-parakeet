@@ -313,7 +313,7 @@ $html ='<table border="0" cellspacing="0" cellpadding="4">
 			</tr>
 			<tr>
 				<td align="center" style="border-left-width: solid;border-right-width: solid;">2</td>
-				<td width="210">Uang Harian 40% / 30% di '.$tuj['tujuan'].'</td>
+				<td width="210">Uang Harian 40% di '.$tuj['tujuan'].'</td>
 				<td width="30" align="right">'.$data['jml_harian1'].'</td>
 				<td width="20">X</td>
 				<td width="80" align="right" style="border-right-width: solid;">'.number_format($data['nilai_harian1'],0,",",".").'</td>
@@ -322,6 +322,15 @@ $html ='<table border="0" cellspacing="0" cellpadding="4">
 			</tr>
 			<tr>
 				<td align="center" style="border-left-width: solid;border-right-width: solid;">3</td>
+				<td width="210">Uang Harian 30% di '.$tuj['tujuan'].'</td>
+				<td width="30" align="right">'.$data['jml_harian2'].'</td>
+				<td width="20">X</td>
+				<td width="80" align="right" style="border-right-width: solid;">'.number_format($data['nilai_harian2'],0,",",".").'</td>
+				<td align="right" style="border-right-width: solid;">'.number_format($data['jml_harian2']*$data['nilai_harian2'],0,",",".").'</td>
+				<td style="border-right-width: solid;">'.$data['ket_harian2'].'</td>
+			</tr>
+			<tr>
+				<td align="center" style="border-left-width: solid;border-right-width: solid;">4</td>
 				<td>Transportasi PP '.$spd['asal'].' - '.$tuj['tujuan'].'</td>
 				<td align="right">'.$data['jml_berangkat'].'</td>
 				<td>X</td>
@@ -330,7 +339,7 @@ $html ='<table border="0" cellspacing="0" cellpadding="4">
 				<td style="border-right-width: solid;">'.$data['ket_berangkat'].'</td>
 			</tr>
 			<tr>
-				<td align="center" style="border-left-width: solid;border-right-width: solid;">4</td>
+				<td align="center" style="border-left-width: solid;border-right-width: solid;">5</td>
 				<td>Uang Reprentasi</td>
 				<td align="right">'.$data['jml_reprentasi'].'</td>
 				<td>X</td>
@@ -339,7 +348,7 @@ $html ='<table border="0" cellspacing="0" cellpadding="4">
 				<td style="border-right-width: solid;">'.$data['ket_reprentasi'].'</td>
 			</tr>
 			<tr>
-				<td align="center" style="border-left-width: solid;border-right-width: solid;">5</td>
+				<td align="center" style="border-left-width: solid;border-right-width: solid;">6</td>
 				<td>'.$data['uraian_lain'].'</td>
 				<td align="right">'.$data['jml_lain'].'</td>
 				<td>X</td>

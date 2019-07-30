@@ -22,6 +22,11 @@
 	$jml_harian1		=$_POST['jml_harian1'];	
 	$nilai_harian1		=$_POST['nilai_harian1'];	
 	$ket_harian1		=$_POST['ket_harian1'];
+
+	$jml_harian2		=$_POST['jml_harian2'];	
+	$nilai_harian2		=$_POST['nilai_harian2'];	
+	$ket_harian2		=$_POST['ket_harian2'];
+	
 	//$jml_pasport		=$_POST['jml_pasport'];	
 	//$nilai_pasport	=$_POST['nilai_pasport'];	
 	//$ket_pasport		=$_POST['ket_pasport'];
@@ -38,11 +43,12 @@
 	$sumberangkat		=$jml_berangkat * $nilai_berangkat;	
 	$sumharian			=$jml_harian * $nilai_harian;
 	$sumharian1			=$jml_harian1 * $nilai_harian1;
+	$sumharian2			=$jml_harian2 * $nilai_harian2;
 	//$sumpasport			=$jml_pasport * $nilai_pasport;
 	$sumreprentasi		=$jml_reprentasi * $nilai_reprentasi;
 	$sumlain			=$jml_lain * $nilai_lain;
 
-	$total				=$sumberangkat+$sumharian+$sumharian1+$sumreprentasi+$sumlain;
+	$total				=$sumberangkat+$sumharian+$sumharian1+$sumharian2+$sumreprentasi+$sumlain;
 
 	$id_satker = $_SESSION['id_satker'];
 	
@@ -52,8 +58,8 @@
 		//}//
 
 		//else{
-		$insert =mysql_query("INSERT INTO tb_rincian (id_rincian, id_satker, id_spd, id_peg, jml_berangkat, nilai_berangkat, ket_berangkat, jml_harian, nilai_harian, ket_harian, jml_harian1, nilai_harian1, ket_harian1, uraian_lain, jml_lain, nilai_lain, ket_lain, jml_reprentasi, nilai_reprentasi, ket_reprentasi, uang_muka, total)
-		VALUES ('$id_rincian', '$id_satker', '$id_spd', '$id_peg', '$jml_berangkat', '$nilai_berangkat', '$ket_berangkat', '$jml_harian', '$nilai_harian', '$ket_harian', '$jml_harian1', '$nilai_harian1', '$ket_harian1', '$uraian_lain', '$jml_lain', '$nilai_lain', '$ket_lain', '$jml_reprentasi', '$nilai_reprentasi', '$ket_reprentasi', '$uang_muka', '$total')");
+		$insert =mysql_query("INSERT INTO tb_rincian (id_rincian, id_satker, id_spd, id_peg, jml_berangkat, nilai_berangkat, ket_berangkat, jml_harian, nilai_harian, ket_harian, jml_harian1, nilai_harian1, ket_harian1, jml_harian2, nilai_harian2, ket_harian2, uraian_lain, jml_lain, nilai_lain, ket_lain, jml_reprentasi, nilai_reprentasi, ket_reprentasi, uang_muka, total)
+		VALUES ('$id_rincian', '$id_satker', '$id_spd', '$id_peg', '$jml_berangkat', '$nilai_berangkat', '$ket_berangkat', '$jml_harian', '$nilai_harian', '$ket_harian', '$jml_harian1', '$nilai_harian1', '$ket_harian1', '$jml_harian2', '$nilai_harian2', '$ket_harian2', '$uraian_lain', '$jml_lain', '$nilai_lain', '$ket_lain', '$jml_reprentasi', '$nilai_reprentasi', '$ket_reprentasi', '$uang_muka', '$total')");
 			
 			if($insert){
 				$_SESSION['pesan'] = "Good! Insert data rincian success ...";

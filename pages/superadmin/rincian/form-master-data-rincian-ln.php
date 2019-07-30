@@ -87,34 +87,46 @@ if (isset($_GET['id_spd']) AND ($_GET['id_peg'])) {
 					<div class="form-group">
 						<label class="col-md-3 control-label">Uang Harian 100% di <?=$tuj['tujuan']?></label>
 						<div class="col-md-2">
-							<input type="text" name="jml_harian" maxlength="1" class="form-control" />
+							<input type="number" name="jml_harian" maxlength="1" class="form-control" />
 						</div>
 						<div class="col-md-3">
-							<input type="text" name="nilai_harian" maxlength="11" class="form-control" />
+							<input type="number" name="nilai_harian" maxlength="11" class="form-control" />
 						</div>
 						<div class="col-md-3">
 							<input type="text" name="ket_harian" maxlength="255" class="form-control" />
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-md-3 control-label">Uang Harian 40% / 30% di <?=$tuj['tujuan']?></label>
+						<label class="col-md-3 control-label">Uang Harian 40% di <?=$tuj['tujuan']?></label>
 						<div class="col-md-2">
-							<input type="text" name="jml_harian1" maxlength="1" class="form-control" />
+							<input type="number" name="jml_harian1" maxlength="1" class="form-control" />
 						</div>
 						<div class="col-md-3">
-							<input type="text" name="nilai_harian1" maxlength="11" class="form-control" />
+							<input type="number" name="nilai_harian1" maxlength="11" class="form-control" />
 						</div>
 						<div class="col-md-3">
 							<input type="text" name="ket_harian1" maxlength="255" class="form-control" />
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-md-3 control-label">Transportasi PP <?=$data['asal']?> - <?=$tuj['tujuan']?></label>
+						<label class="col-md-3 control-label">Uang Harian 30% di <?=$tuj['tujuan']?></label>
 						<div class="col-md-2">
-							<input type="text" name="jml_berangkat" maxlength="1" class="form-control" />
+							<input type="number" name="jml_harian2" maxlength="1" class="form-control" />
 						</div>
 						<div class="col-md-3">
-							<input type="text" name="nilai_berangkat" maxlength="11" class="form-control" />
+							<input type="number" name="nilai_harian2" maxlength="11" class="form-control" />
+						</div>
+						<div class="col-md-3">
+							<input type="text" name="ket_harian2" maxlength="255" class="form-control" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label">Transportasi PP <?=$data['asal']?> - <?=$tuj['tujuan']?></label>
+						<div class="col-md-2">
+							<input type="number" name="jml_berangkat" maxlength="1" class="form-control" />
+						</div>
+						<div class="col-md-3">
+							<input type="number" name="nilai_berangkat" maxlength="11" class="form-control" />
 						</div>
 						<div class="col-md-3">
 							<input type="text" name="ket_berangkat" maxlength="255" class="form-control" />
@@ -123,10 +135,10 @@ if (isset($_GET['id_spd']) AND ($_GET['id_peg'])) {
 					<div class="form-group">
 						<label class="col-md-3 control-label">Uang Reprentasi</label>
 						<div class="col-md-2">
-							<input type="text" name="jml_reprentasi" maxlength="1" class="form-control" />
+							<input type="number" name="jml_reprentasi" maxlength="1" class="form-control" />
 						</div>
 						<div class="col-md-3">
-							<input type="text" name="nilai_reprentasi" maxlength="11" class="form-control" />
+							<input type="number" name="nilai_reprentasi" maxlength="11" class="form-control" />
 						</div>
 						<div class="col-md-3">
 							<input type="text" name="ket_reprentasi" maxlength="255" class="form-control" />
@@ -141,10 +153,10 @@ if (isset($_GET['id_spd']) AND ($_GET['id_peg'])) {
 					<div class="form-group">
 						<label class="col-md-3 control-label"></label>
 						<div class="col-md-2">
-							<input type="text" name="jml_lain" maxlength="1" class="form-control" />
+							<input type="number" name="jml_lain" maxlength="1" class="form-control" />
 						</div>
 						<div class="col-md-3">
-							<input type="text" name="nilai_lain" maxlength="11" class="form-control" />
+							<input type="number" name="nilai_lain" maxlength="11" class="form-control" />
 						</div>
 						<div class="col-md-3">
 							<input type="text" name="ket_lain" maxlength="255" class="form-control" />
@@ -153,7 +165,7 @@ if (isset($_GET['id_spd']) AND ($_GET['id_peg'])) {
 					<div class="form-group">
 						<label class="col-md-3 control-label">Uang Muka</label>
 						<div class="col-md-8">
-							<input type="text" name="uang_muka" maxlength="11" class="form-control" />
+							<input type="number" name="uang_muka" maxlength="11" class="form-control" />
 						</div>
 					</div>
 					<div class="form-group">
