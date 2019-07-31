@@ -71,7 +71,7 @@
 					<tr>
 						<td><?php echo $no?></td>
 						<td><?php
-							$selPeg	=mysql_query("SELECT nama,nip FROM tb_pegawai WHERE id_peg='$spd[pegawai]'");
+							$selPeg	=mysql_query("SELECT nama,nip,satker FROM tb_pegawai WHERE id_peg='$spd[pegawai]'");
 							$peg	=mysql_fetch_array($selPeg);
 							echo $peg['nama'].' <br> NIP '.$peg['nip'];
 							?>
@@ -95,7 +95,7 @@
 							?>
 						</td>
 						<td><?php
-							$selSat	=mysql_query("SELECT satker FROM tb_satker WHERE id_satker='$spd[id_satker]'");
+							$selSat	=mysql_query("SELECT satker FROM tb_satker WHERE id_satker='$peg[satker]'");
 							$tuj	=mysql_fetch_array($selSat);
 							echo $tuj['satker'];
 							?>

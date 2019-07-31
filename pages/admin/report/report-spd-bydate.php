@@ -120,6 +120,7 @@
 						<th>Tujuan</th>
 						<th>Tgl Berangkat</th>
 						<th>JML Hari</th>
+						<th width="4%">Unit</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -154,6 +155,12 @@
 							$diff	=$kmbl->diff($brkt);
 							$lama	=($diff->d)+1;
 							echo $lama;
+							?>
+						</td>
+						<td><?php
+							$selSat	=mysql_query("SELECT satker FROM tb_satker WHERE id_satker='$peg[satker]'");
+							$tuj	=mysql_fetch_array($selSat);
+							echo $tuj['satker'];
 							?>
 						</td>
 					</tr>
