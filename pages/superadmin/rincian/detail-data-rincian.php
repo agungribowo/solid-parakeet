@@ -67,6 +67,10 @@
 												<td class="field">Tanggal</td>
 												<td><?=$spd['tgl']?></td>
 											</tr>
+											<tr>
+												<td class="field">Kegiatan</td>
+												<td><?=$spd['keperluan']?></td>
+											</tr>
 										</tbody>
 									</table>
 									

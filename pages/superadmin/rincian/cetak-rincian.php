@@ -291,6 +291,11 @@ $head ='<table border="0" cellspacing="0" cellpadding="2">
 				<td>:</td>
 				<td>'.$d1.' '.$m1.' '.$y1.'</td>
 			</tr>
+			<tr>
+				<td>Kegiatan</td>	
+				<td>:</td>
+				<td>'.$spd['keperluan'].'</td>
+			</tr>
 		</table>';	
 $pdf->writeHTML($head, true, false, false, false, '');
 
