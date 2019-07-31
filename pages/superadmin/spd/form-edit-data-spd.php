@@ -219,13 +219,13 @@
 							<label class="col-md-4 control-label">Tahun Anggaran</label>
 							<div class="col-md-8">
 								<?php
-									$tahuna = mysql_query("SELECT * FROM tb_ta");        
+								$tahuna = mysql_query("SELECT A.id_ta,A.tahun,(SELECT B.satker from tb_satker B where B.id_satker=A.id_satker) as `satker` FROM tb_ta A");             
 									echo '<select name="ta" class="default-select2 form-control" style="width:100%">';    
 									// echo '<option value="'.$data['ta'].'">...</option>';    
 										while ($ta = mysql_fetch_array($tahuna)) {    
 											if ($ta['id_ta'] == $data['tahun'])
-											echo '<option selected value="'.$ta['id_ta'].'">'.$ta['tahun'].'</option>';  
-											else 	echo '<option value="'.$ta['id_ta'].'">'.$ta['tahun'].'</option>';   
+											echo '<option selected value="'.$ta['id_ta'].'">'.$ta['tahun'].' - '.$ta['satker'].'</option>';  
+											else 	echo '<option value="'.$ta['id_ta'].'">'.$ta['tahun'].' - '.$ta['satker'].'</option>';   
 
 										// echo '<option value="'.$ta['id_ta'].'">'.$ta['tahun'].'</option>';    
 										}    

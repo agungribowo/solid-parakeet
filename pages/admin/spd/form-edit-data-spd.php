@@ -124,7 +124,7 @@
 							<label class="col-md-4 control-label">Pegawai</label>
 							<div class="col-md-8">
 								<?php
-									$pegawai = mysql_query("SELECT * FROM tb_pegawai ORDER BY nama ASC");        
+									$pegawai = mysql_query("SELECT * FROM tb_pegawai where satker=$id_satker ORDER BY nama ASC");        
 									echo '<select  name="pegawai" class="default-select2 form-control">';    
 									// echo '<option value="'.$data['pegawai'].'">...</option>';    
 										while ($peg = mysql_fetch_array($pegawai)) {    
@@ -219,7 +219,7 @@
 							<label class="col-md-4 control-label">Tahun Anggaran</label>
 							<div class="col-md-8">
 								<?php
-									$tahuna = mysql_query("SELECT * FROM tb_ta");        
+									$tahuna = mysql_query("SELECT * FROM tb_ta where id_satker=$id_satker");        
 									echo '<select name="ta" class="default-select2 form-control" style="width:100%">';    
 									// echo '<option value="'.$data['ta'].'">...</option>';    
 										while ($ta = mysql_fetch_array($tahuna)) {    
