@@ -121,7 +121,7 @@
 								echo '</select>';
 							?>
 						</div>
-						<div class="form-group">
+						<div class="form-group" style="display:none">
 							<label>Kelengkapan</label>
 							<?php
 								$kelengkapan = mysql_query("SELECT * FROM tb_kelengkapan");  

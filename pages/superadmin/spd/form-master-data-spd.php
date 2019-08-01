@@ -121,7 +121,7 @@
 								echo '</select>';
 							?>
 						</div>
-						<div class="form-group">
+						<div class="form-group" style="display:none">
 							<label>Kelengkapan</label>
 							<?php
 								$kelengkapan = mysql_query("SELECT * FROM tb_kelengkapan");  
@@ -249,7 +249,7 @@
 									echo '<select name="ta" class="default-select2 form-control" style="width:100%">';    
 									echo '<option value="">...</option>';    
 										while ($ta = mysql_fetch_array($tahuna)) {    
-										echo '<option value="'.$ta['id_ta'].'">'.$ta['tahun'].'-'.$ta['satker'].'</option>';    
+										echo '<option value="'.$ta['id_ta'].'">'.$ta['tahun'].' - '.$ta['satker'].'</option>';    
 										}    
 									echo '</select>';
 								?>
