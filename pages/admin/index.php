@@ -180,7 +180,7 @@ if($_SESSION['hak_akses']!="Admin"){
 					<li><a href="index.php?page=form-view-nominatif"><i class="ion-filing bg-grey"></i><span>Daftar Nominatif</span></a></li>
 					<li><a href="index.php?page=form-view-data-rincian"><i class="ion-filing bg-warning"></i><span>Daftar Rincian</span></a></li>
 					<li><a href="index.php?page=form-view-data-riil"><i class="ion-filing bg-danger"></i><span>Daftar Riil</span></a></li>
-					<li><a href="index.php?page=form-view-data-kwitansi"><i class="fa fa-money bg-success"></i><span>Daftar Kwitansi</span> <span class="badge bg-warning pull-right"><span class="ion-alert"></span></span></a></li>
+					<li><a href="index.php?page=form-view-data-kwitansi"><i class="fa fa-money bg-success"></i><span>Daftar Kwitansi</span></a></li>
 					<li class="has-sub">
 						<a href="javascript:;"><b class="caret pull-right"></b><i class="ion-printer"></i><span>Report</span></a>
 						<ul class="sub-menu">
