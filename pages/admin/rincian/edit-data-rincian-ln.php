@@ -49,6 +49,10 @@
 
 	$total				=$sumberangkat+$sumharian+$sumharian1+$sumharian2+$sumreprentasi+$sumlain;
 	
+	if($hasil['id_user'] != $_SESSION['id_user']) {
+		$_SESSION['pesan'] = "Oops! Tidak dapat mengedit data user lain ...";
+		header("location:index.php?page=form-edit-data-rincian&id_rincian=$id_rincian");
+	} else {
 		//if (empty($_POST['jml_inap']) || empty($_POST['nilai_inap']) || empty($_POST['jml_berangkat']) || empty($_POST['nilai_berangkat']) || empty($_POST['jml_kembali']) || empty($_POST['nilai_kembali'])) {
 			//$_SESSION['pesan'] = "Oops! Please fill all column ...";
 			//header("location:index.php?page=form-edit-data-rincian&id_rincian=$id_rincian");
@@ -64,7 +68,7 @@
 			else {
 				echo "<div class='register-logo'><b>Oops!</b> 404 Error Server.</div>";
 			}
-		//}//
+		}//
 	}
 ?>
 </div>

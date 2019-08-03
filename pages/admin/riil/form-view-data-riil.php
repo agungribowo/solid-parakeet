@@ -40,6 +40,7 @@
 							<th>Nomor SPD</th>
 							<th>Tgl SPD</th>
 							<th>Pegawai</th>
+							<th>User</th>
 							<th width="10%">Action</th>
 						</tr>
 					</thead>
@@ -65,10 +66,17 @@
 									echo $peg['nama'];
 								?>
 							</td>
+							<td><?php
+								$pegawai	=mysql_query("SELECT nama_user FROM tb_user WHERE id_user='$spd[id_user]'");
+								$peg	=mysql_fetch_array($pegawai);
+								echo $peg['nama_user'];
+								?>
+							</td>
 							<td class="text-center">
 								<?php
 								$seltuj	=mysql_query("SELECT * FROM tb_tujuan WHERE id_tujuan='$spd[tujuan]'");
 								while ($tuj	=mysql_fetch_array($seltuj)){
+								if ($spd['id_user'] == $_SESSION['id_user']) {
 									if ($tuj['jenis'] =="Luar Negeri"){
 										echo"<a type='button' class='btn btn-success btn-icon btn-sm' href='index.php?page=detail-data-riil-ln&id_riil=";echo$rii['id_riil'];echo"' title='detail'><i class='fa fa-folder-open-o fa-lg'></i></a>
 										<a type='button' class='btn btn-info btn-icon btn-sm' href='index.php?page=form-edit-data-riil-ln&id_riil=";echo$rii['id_riil'];echo"' title='edit'><i class='fa fa-pencil fa-lg'></i></a>";
@@ -77,7 +85,16 @@
 										echo"<a type='button' class='btn btn-success btn-icon btn-sm' href='index.php?page=detail-data-riil&id_riil=";echo$rii['id_riil'];echo"' title='detail'><i class='fa fa-folder-open-o fa-lg'></i></a>
 										<a type='button' class='btn btn-info btn-icon btn-sm' href='index.php?page=form-edit-data-riil&id_riil=";echo$rii['id_riil'];echo"' title='edit'><i class='fa fa-pencil fa-lg'></i></a>";
 									}
+								} else {
+									if ($tuj['jenis'] =="Luar Negeri"){
+										echo"<a type='button' class='btn btn-success btn-icon btn-sm' href='index.php?page=detail-data-riil-ln&id_riil=";echo$rii['id_riil'];echo"' title='detail'><i class='fa fa-folder-open-o fa-lg'></i></a>
+										";
+									}
+									else{
+										echo"<a type='button' class='btn btn-success btn-icon btn-sm' href='index.php?page=detail-data-riil&id_riil=";echo$rii['id_riil'];echo"' title='detail'><i class='fa fa-folder-open-o fa-lg'></i></a>";
+									}
 								}
+							}
 								?>
 							</td>
 						</tr>

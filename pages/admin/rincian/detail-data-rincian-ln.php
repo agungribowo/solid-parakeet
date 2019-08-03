@@ -25,7 +25,9 @@
 			$_SESSION['pesan'] ="";
 		?>
 	</li>
+	<?php if ($data['id_user'] == $_SESSION['id_user']) {?>
 	<li><a href="index.php?page=form-edit-data-rincian-ln&id_rincian=<?=$id_rincian?>" title="edit" class="btn btn-sm btn-default m-b-10"><i class="fa fa-pencil"></i> &nbsp;Edit</a></li>
+	<?php }?>
 	<li><a href="../../pages/admin/rincian/cetak-rincian-ln.php?id_rincian=<?=$id_rincian?>" target="_blank" title="cetak" class="btn btn-sm btn-primary m-b-10"><i class="fa fa-print"></i> &nbsp;Cetak</a></li>
 </ol>
 <!-- end breadcrumb -->

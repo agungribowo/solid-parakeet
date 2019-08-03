@@ -31,6 +31,7 @@
 	$satker			=$_SESSION['id_satker'];	
 	$ta				=$_POST['ta'];	
 	$ma				=$_POST['ma'];	
+	$id_user 		=$_SESSION['id_user'];
 	$jenis_pengeluaran	=$_POST['jenis_pengeluaran'];
 	$id_satker = $_SESSION['id_satker'];
 	
@@ -78,8 +79,8 @@
 		// }
 		
 		else{
-		$insert =mysql_query("INSERT INTO tb_spd (id_spd, id_satker, pejabat, tingkat_biaya, transport, pengikut, kelengkapan, ket, keperluan, nomor, tgl, pegawai, asal, tujuan, tgl_berangkat, tgl_kembali, no_sprin, tgl_sprin, satker, ta, ma, jenis_pengeluaran, semua_peg)
-		VALUES ('$id_spd', '$id_satker', '$pejabat', '$tingkat_biaya', '$transport', '$pengikut', '$kelengkapan', '$ket', '$keperluan', '$nomer', '$tgl', '$pegawai', '$asal', '$tujuan', '$tgl_berangkat', '$tgl_kembali', '$no_sprin', '$tgl_sprin', '$satker', '$ta', '$ma', '$jenis_pengeluaran', '$semua_peg')");
+		$insert =mysql_query("INSERT INTO tb_spd (id_spd, id_user, id_satker, pejabat, tingkat_biaya, transport, pengikut, kelengkapan, ket, keperluan, nomor, tgl, pegawai, asal, tujuan, tgl_berangkat, tgl_kembali, no_sprin, tgl_sprin, satker, ta, ma, jenis_pengeluaran, semua_peg)
+		VALUES ('$id_spd', '$id_user', '$id_satker', '$pejabat', '$tingkat_biaya', '$transport', '$pengikut', '$kelengkapan', '$ket', '$keperluan', '$nomer', '$tgl', '$pegawai', '$asal', '$tujuan', '$tgl_berangkat', '$tgl_kembali', '$no_sprin', '$tgl_sprin', '$satker', '$ta', '$ma', '$jenis_pengeluaran', '$semua_peg')");
 			
 			$nom	=explode(',', $semua_peg);
 			foreach ($nom as $listpeg) {

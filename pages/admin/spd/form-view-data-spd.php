@@ -122,6 +122,7 @@
 							<th>Tgl SPD</th>
 							<th>Pegawai</th>
 							<th>Tujuan</th>
+							<th>User</th>
 							<th width="10%">Action</th>
 						</tr>
 					</thead>
@@ -148,11 +149,18 @@
 								echo $tuj['tujuan'];
 								?>
 							</td>
+							<td><?php
+								$pegawai	=mysql_query("SELECT nama_user FROM tb_user WHERE id_user='$spd[id_user]'");
+								$peg	=mysql_fetch_array($pegawai);
+								echo $peg['nama_user'];
+								?>
+							</td>
 							<td class="text-center">
 								<a type="button" class="btn btn-success btn-icon btn-sm" href="index.php?page=detail-data-spd&id_spd=<?=$spd['id_spd']?>" title="detail"><i class="fa fa-folder-open-o fa-lg"></i></a>
+								<?php if($spd['id_user'] == $_SESSION['id_user']) {?>
 								<a type="button" class="btn btn-info btn-icon btn-sm" href="index.php?page=form-edit-data-spd&id_spd=<?=$spd['id_spd']?>" title="edit"><i class="fa fa-pencil fa-lg"></i></a>
 								<a type="button" class="btn btn-danger btn-icon btn-sm" data-toggle="modal" data-target="#Del<?php echo $spd['id_spd']?>" title="delete"><i class="fa fa-trash-o fa-lg"></i></a>								
-							</td>
+								<?php }?>							</td>
 						</tr>
 						<!-- #modal-dialog -->
 						<div id="Del<?php echo $spd['id_spd']?>" class="modal fade" role="dialog">

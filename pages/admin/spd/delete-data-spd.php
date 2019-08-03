@@ -23,6 +23,10 @@ if (isset($_GET['id_spd'])) {
 			$_SESSION['pesan'] = "Oops! Data telah diproses sehingga tidak dapat dihapus ...";
 			header("location:index.php?page=form-view-data-spd");
 		}
+		else if($data['id_user'] != $_SESSION['id_user']) {
+			$_SESSION['pesan'] = "Oops! Tidak dapat mengedit data user lain ...";
+			header("location:index.php?page=form-edit-data-spd&id_spd=$id_spd");
+		}
 		else if($cekkwi > 0) {
 			$_SESSION['pesan'] = "Oops! Data telah diproses sehingga tidak dapat dihapus ...";
 			header("location:index.php?page=form-view-data-spd");

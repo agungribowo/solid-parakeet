@@ -12,6 +12,7 @@
 	}
 	
 	if ($_POST['save'] == "save") {
+	$id_user 		=$_SESSION['id_user'];
 	$jml_inap			=$_POST['jml_inap'];
 	$nilai_inap			=$_POST['nilai_inap'];
 	$ket_inap			=$_POST['ket_inap'];
@@ -57,8 +58,8 @@
 		$id_satker = $_SESSION['id_satker'];
 
 		//else{
-		$insert =mysql_query("INSERT INTO tb_rincian (id_rincian, id_satker, id_spd, id_peg, jml_inap, nilai_inap, ket_inap, jml_berangkat, nilai_berangkat, ket_berangkat, jml_kembali, nilai_kembali, ket_kembali, jml_taxi_berangkat, nilai_taxi_berangkat, ket_taxi_berangkat, jml_taxi_kembali, nilai_taxi_kembali, ket_taxi_kembali, jml_harian, nilai_harian, ket_harian, jml_saku, nilai_saku, ket_saku, uraian_lain, jml_lain, nilai_lain, ket_lain, uang_muka, total)
-		VALUES ('$id_rincian', '$id_satker', '$id_spd', '$id_peg', '$jml_inap', '$nilai_inap', '$ket_inap', '$jml_berangkat', '$nilai_berangkat', '$ket_berangkat', '$jml_kembali', '$nilai_kembali', '$ket_kembali', '$jml_taxi_berangkat', '$nilai_taxi_berangkat', '$ket_taxi_berangkat', '$jml_taxi_kembali', '$nilai_taxi_kembali', '$ket_taxi_kembali', '$jml_harian', '$nilai_harian', '$ket_harian', '$jml_saku', '$nilai_saku', '$ket_saku', '$uraian_lain', '$jml_lain', '$nilai_lain', '$ket_lain', '$uang_muka', '$total')");
+		$insert =mysql_query("INSERT INTO tb_rincian (id_rincian, id_user, id_satker, id_spd, id_peg, jml_inap, nilai_inap, ket_inap, jml_berangkat, nilai_berangkat, ket_berangkat, jml_kembali, nilai_kembali, ket_kembali, jml_taxi_berangkat, nilai_taxi_berangkat, ket_taxi_berangkat, jml_taxi_kembali, nilai_taxi_kembali, ket_taxi_kembali, jml_harian, nilai_harian, ket_harian, jml_saku, nilai_saku, ket_saku, uraian_lain, jml_lain, nilai_lain, ket_lain, uang_muka, total)
+		VALUES ('$id_rincian', '$id_user', '$id_satker', '$id_spd', '$id_peg', '$jml_inap', '$nilai_inap', '$ket_inap', '$jml_berangkat', '$nilai_berangkat', '$ket_berangkat', '$jml_kembali', '$nilai_kembali', '$ket_kembali', '$jml_taxi_berangkat', '$nilai_taxi_berangkat', '$ket_taxi_berangkat', '$jml_taxi_kembali', '$nilai_taxi_kembali', '$ket_taxi_kembali', '$jml_harian', '$nilai_harian', '$ket_harian', '$jml_saku', '$nilai_saku', '$ket_saku', '$uraian_lain', '$jml_lain', '$nilai_lain', '$ket_lain', '$uang_muka', '$total')");
 			
 			if($insert){
 				$_SESSION['pesan'] = "Good! Insert data rincian success ...";

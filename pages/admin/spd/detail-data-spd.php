@@ -138,7 +138,11 @@
 											<td><?php echo $d2?>-<?php echo $m2?>-<?php echo $y2?></td>
 										</tr>
 										<tr>
-											<td class="field">Pengikut &nbsp;<a type="button" class="btn btn-danger btn-icon btn-xs" href="index.php?page=form-edit-pengikut&id_spd=<?=$id_spd?>" title="edit pengikut"><i class="fa fa-pencil fa-lg"></i></a></td>
+											<td class="field">Pengikut &nbsp;
+											<?php if ($spd['id_user'] == $_SESSION['id_user']) {?>
+												<a type="button" class="btn btn-danger btn-icon btn-xs" href="index.php?page=form-edit-pengikut&id_spd=<?=$id_spd?>" title="edit pengikut"><i class="fa fa-pencil fa-lg"></i></a>
+											<?php }?>
+											</td>
 											<td><?php
 													$ikut	=$data['pengikut'];
 													$array	=explode(',', $ikut);
@@ -190,7 +194,9 @@
 						}
 					?>
 					<br />
+					<?php if ($spd['id_user'] == $_SESSION['id_user']) {?>
 					<a type="button" class="btn btn-danger btn-icon btn-xs" href="index.php?page=form-edit-lengkap&id_spd=<?=$id_spd?>" title="edit kelengkapan"><i class="fa fa-pencil fa-lg"></i></a>
+					<?php }?>
 				</div>
 				<div class="panel-body">
 					Keterangan :<br />

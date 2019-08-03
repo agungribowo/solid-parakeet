@@ -77,7 +77,10 @@
 			$_SESSION['pesan'] = "Oops! Pegawai bersangkutan masih dalam perjalan dinas ...";
 			header("location:index.php?page=form-edit-data-spd&id_spd=$id_spd");
 		}
-
+		else if($hasil['id_user'] != $_SESSION['id_user']) {
+			$_SESSION['pesan'] = "Oops! Tidak dapat mengedit data user lain ...";
+			header("location:index.php?page=form-edit-data-spd&id_spd=$id_spd");
+		}
 		else if(in_array($pegawai, $semua_pengikut)){
 			$_SESSION['pesan'] = "Oops! Duplikat daftar nominatif pegawai ...";
 			header("location:index.php?page=form-edit-data-spd&id_spd=$id_spd");

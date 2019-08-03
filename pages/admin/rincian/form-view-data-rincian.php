@@ -41,6 +41,7 @@
 							<th>Tgl SPD</th>
 							<th>Pegawai</th>
 							<th>Total (RP)</th>
+							<th>User</th>
 							<th width="8%">Action</th>
 							<th width="10%">Riil & Kwitansi</th>
 						</tr>
@@ -68,10 +69,17 @@
 								?>
 							</td>
 							<td align="right"><?php echo number_format($rin['total'],0,",",".");?></td>
+							<td><?php
+								$pegawai	=mysql_query("SELECT nama_user FROM tb_user WHERE id_user='$spd[id_user]'");
+								$peg	=mysql_fetch_array($pegawai);
+								echo $peg['nama_user'];
+								?>
+							</td>
 							<td class="text-center">
 								<?php
 								$seltuj	=mysql_query("SELECT * FROM tb_tujuan WHERE id_tujuan='$spd[tujuan]'");
 								while ($tuj	=mysql_fetch_array($seltuj)){
+									if ($spd['id_user'] == $_SESSION['id_user']) {
 									if ($tuj['jenis'] =="Luar Negeri"){
 										echo"<a type='button' class='btn btn-success btn-icon btn-sm' href='index.php?page=detail-data-rincian-ln&id_rincian=";echo$rin['id_rincian'];echo"' title='detail'><i class='fa fa-folder-open-o fa-lg'></i></a>
 										<a type='button' class='btn btn-info btn-icon btn-sm' href='index.php?page=form-edit-data-rincian-ln&id_rincian=";echo$rin['id_rincian'];echo"' title='edit'><i class='fa fa-pencil fa-lg'></i></a>";
@@ -80,10 +88,22 @@
 										echo"<a type='button' class='btn btn-success btn-icon btn-sm' href='index.php?page=detail-data-rincian&id_rincian=";echo$rin['id_rincian'];echo"' title='detail'><i class='fa fa-folder-open-o fa-lg'></i></a>
 										<a type='button' class='btn btn-info btn-icon btn-sm' href='index.php?page=form-edit-data-rincian&id_rincian=";echo$rin['id_rincian'];echo"' title='edit'><i class='fa fa-pencil fa-lg'></i></a>";
 									}
+								}else{
+									if ($tuj['jenis'] =="Luar Negeri"){
+										echo"<a type='button' class='btn btn-success btn-icon btn-sm' href='index.php?page=detail-data-rincian-ln&id_rincian=";echo$rin['id_rincian'];echo"' title='detail'><i class='fa fa-folder-open-o fa-lg'></i></a>";
+									}
+									else{
+										echo"<a type='button' class='btn btn-success btn-icon btn-sm' href='index.php?page=detail-data-rincian&id_rincian=";echo$rin['id_rincian'];echo"' title='detail'><i class='fa fa-folder-open-o fa-lg'></i></a>";
+									}
+								}
+								}
 								?>
 							</td>
 							<td class="text-center">
 								<?php
+								if ($spd['id_user'] !== $_SESSION['id_user'])
+									echo "-";
+								else {
 								$cekriil	=mysql_num_rows (mysql_query("SELECT id_spd, id_peg, id_rincian FROM tb_riil WHERE id_spd='$rin[id_spd]' AND id_peg='$rin[id_peg]' AND id_rincian='$rin[id_rincian]'"));
 								if($cekriil > 0) {
 									echo"<a type='button' class='btn btn-white active btn-icon btn-sm' href='javascript:;' title='riil telah dibuat'><i class='ion-ios-paper-outline fa-lg'></i></a>";
@@ -106,6 +126,7 @@
 									echo"<a type='button' class='btn btn-danger btn-icon btn-sm' data-toggle='modal' data-target='#Kwi";echo $rin['id_rincian'];echo"' title='create kwitansi'><i class='ion-navigate fa-lg'></i></a>";
 								}
 								}
+							
 								?>
 							</td>
 						</tr>

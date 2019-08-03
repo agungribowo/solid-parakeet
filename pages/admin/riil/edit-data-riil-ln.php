@@ -23,6 +23,10 @@
 	$jml3	=$_POST['jml3'];
 	$jml4	=$_POST['jml4'];
 
+	if($hasil['id_user'] != $_SESSION['id_user']) {
+		$_SESSION['pesan'] = "Oops! Tidak dapat mengedit data user lain ...";
+		header("location:index.php?page=detail-data-riil&id_riil=$id_riil");
+	} else {
 	$id_satker = $_SESSION['id_satker'];
 		$q = "UPDATE tb_riil SET uraian1='$uraian1', uraian2='$uraian2', uraian3='$uraian3', uraian4='$uraian4',jml1='$jml1', jml2='$jml2',jml3='$jml3',jml4='$jml4' WHERE id_riil='$id_riil' AND id_satker='$id_satker'";
 		$update= mysql_query ($q);
@@ -35,5 +39,6 @@
 				echo "<div class='register-logo'><b>Oops!</b> 404 Error Server.</div>";
 			}
 	}
+}
 ?>
 </div>

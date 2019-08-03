@@ -28,8 +28,8 @@
 	$spd	= mysql_fetch_array ($query2);
 	$id_satker = $_SESSION['id_satker'];
 	
-		$insert =mysql_query("INSERT INTO tb_riil (id_riil, id_satker, id_spd, id_peg, id_rincian, uraian1, uraian2, uraian3, uraian4, jml1, jml2, jml3, jml4 )
-		VALUES ('$id_riil', '$id_satker', '$id_spd', '$id_peg', '$id_rincian', '$uraian1', '$uraian2', '$uraian3',  '$uraian4', '$jml1', '$jml2', '$jml3', '$jml4')");
+		$insert =mysql_query("INSERT INTO tb_riil (id_riil, id_user, id_satker, id_spd, id_peg, id_rincian, uraian1, uraian2, uraian3, uraian4, jml1, jml2, jml3, jml4 )
+		VALUES ('$id_riil', '$id_user', '$id_satker', '$id_spd', '$id_peg', '$id_rincian', '$uraian1', '$uraian2', '$uraian3',  '$uraian4', '$jml1', '$jml2', '$jml3', '$jml4')");
 			
 			if($insert){
 				$_SESSION['pesan'] = "Good! Insert data pengeluaran riil success ...";
