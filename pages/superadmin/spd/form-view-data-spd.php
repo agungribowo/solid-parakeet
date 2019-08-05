@@ -122,6 +122,7 @@
 							<th>Tgl SPD</th>
 							<th>Pegawai</th>
 							<th>Tujuan</th>
+							<th>User</th>
 							<th width="10%">Action</th>
 						</tr>
 					</thead>
@@ -146,6 +147,12 @@
 								$selTuj	=mysql_query("SELECT * FROM tb_tujuan WHERE id_tujuan='$spd[tujuan]'");
 								$tuj	=mysql_fetch_array($selTuj);
 								echo $tuj['tujuan'];
+								?>
+							</td>
+							<td><?php
+								$pegawai	=mysql_query("SELECT nama_user FROM tb_user WHERE id_user='$spd[id_user]'");
+								$peg	=mysql_fetch_array($pegawai);
+								echo $peg['nama_user'];
 								?>
 							</td>
 							<td class="text-center">
