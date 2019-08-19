@@ -136,7 +136,7 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-md-3 control-label">Uang Saku Rapat</label>
+						<label class="col-md-3 control-label">Uang Saku Rapat Halfday</label>
 						<div class="col-md-2">
 							<input type="number" name="jml_saku" maxlength="1" value="<?=$data['jml_saku']?>" class="form-control" />
 						</div>
@@ -145,6 +145,30 @@
 						</div>
 						<div class="col-md-3">
 							<input type="text" name="ket_saku" maxlength="255" value="<?=$data['ket_saku']?>" class="form-control" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label">Uang Saku Rapat Fullday</label>
+						<div class="col-md-2">
+							<input type="number" name="jml_saku2" maxlength="1" value="<?=$data['jml_saku2']?>" class="form-control" />
+						</div>
+						<div class="col-md-3">
+							<input type="number" name="nilai_saku2" maxlength="11" value="<?=$data['nilai_saku2']?>" class="form-control" />
+						</div>
+						<div class="col-md-3">
+							<input type="text" name="ket_saku2" maxlength="255" value="<?=$data['ket_saku2']?>" class="form-control" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label">Uang Saku Rapat Fullboard</label>
+						<div class="col-md-2">
+							<input type="number" name="jml_saku3" maxlength="1" value="<?=$data['jml_saku3']?>" class="form-control" />
+						</div>
+						<div class="col-md-3">
+							<input type="number" name="nilai_saku3" maxlength="11" value="<?=$data['nilai_saku3']?>" class="form-control" />
+						</div>
+						<div class="col-md-3">
+							<input type="text" name="ket_saku3" maxlength="255" value="<?=$data['ket_saku3']?>" class="form-control" />
 						</div>
 					</div>
 					<div class="form-group">

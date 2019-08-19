@@ -157,7 +157,7 @@ if (isset($_GET['id_spd']) AND ($_GET['id_peg'])) {
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-md-3 control-label">Uang Saku Rapat</label>
+						<label class="col-md-3 control-label">Uang Saku Rapat Halfday</label>
 						<div class="col-md-2">
 							<input type="number" name="jml_saku" value="0" maxlength="2" class="form-control" />
 						</div>
@@ -166,6 +166,30 @@ if (isset($_GET['id_spd']) AND ($_GET['id_peg'])) {
 						</div>
 						<div class="col-md-3">
 							<input type="text" name="ket_saku" maxlength="255" class="form-control" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label">Uang Saku Rapat Fullday</label>
+						<div class="col-md-2">
+							<input type="number" name="jml_saku2" value="0" maxlength="2" class="form-control" />
+						</div>
+						<div class="col-md-3">
+							<input type="number" name="nilai_saku2" value="<?=$tuj['saku']?>" maxlength="11" class="form-control" />
+						</div>
+						<div class="col-md-3">
+							<input type="text" name="ket_saku2" maxlength="255" class="form-control" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-3 control-label">Uang Saku Rapat Fullboard</label>
+						<div class="col-md-2">
+							<input type="number" name="jml_saku3" value="0" maxlength="2" class="form-control" />
+						</div>
+						<div class="col-md-3">
+							<input type="number" name="nilai_saku3" value="<?=$tuj['saku']?>" maxlength="11" class="form-control" />
+						</div>
+						<div class="col-md-3">
+							<input type="text" name="ket_saku3" maxlength="255" class="form-control" />
 						</div>
 					</div>
 					<div class="form-group">

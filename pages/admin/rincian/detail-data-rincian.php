@@ -148,12 +148,36 @@
 											</tr>
 											<tr>
 												<td>4</td>
-												<td>Uang Saku Rapat</td>
+												<td colspan="4">Uang Saku Rapat:</td>
+												<td></td>
+												<td></td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>Uang Saku Halfday</td>
 												<td><?=$data['jml_saku']?></td>
 												<td>x</td>
 												<td align="right"><?=number_format($data['nilai_saku'],0,",",".");?></td>
 												<td align="right"><?=number_format($data['jml_saku']*$data['nilai_saku'],0,",",".");?></td>
 												<td><?=$data['ket_saku']?></td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>Uang Saku Fullday</td>
+												<td><?=$data['jml_saku2']?></td>
+												<td>x</td>
+												<td align="right"><?=number_format($data['nilai_saku2'],0,",",".");?></td>
+												<td align="right"><?=number_format($data['jml_saku2']*$data['nilai_saku2'],0,",",".");?></td>
+												<td><?=$data['ket_saku2']?></td>
+											</tr>
+											<tr>
+												<td></td>
+												<td>Uang Saku Halfday</td>
+												<td><?=$data['jml_saku3']?></td>
+												<td>x</td>
+												<td align="right"><?=number_format($data['nilai_saku3'],0,",",".");?></td>
+												<td align="right"><?=number_format($data['jml_saku3']*$data['nilai_saku3'],0,",",".");?></td>
+												<td><?=$data['ket_saku3']?></td>
 											</tr>
 											<tr>
 												<td>5</td>

@@ -359,11 +359,11 @@ $html ='<table border="0" cellspacing="0" cellpadding="2">
 			</tr>
 			<tr>
 				<td align="center" style="border-top-width: solid; border-left-width: solid; border-right-width: solid;">2</td>
-				<td style="border-top-width: solid; border-right-width: solid;">Nama / NRP Pegawai yang Melaksanakan Perjalanan Dinas</td>
-				<td style="border-top-width: solid; border-right-width: solid;"><font style="text-transform:none">'.$peg['nama'].' <br/> NIP '.$peg['nip'].'</font></td>
+				<td style="border-top-width: solid; border-right-width: solid;">Nama Pegawai Pelaksana Perjalanan Dinas<br/>NIP/NRP </td>
+				<td style="border-top-width: solid; border-right-width: solid;"><font style="text-transform:none">'.$peg['nama'].' <br/> NIP/NRP '.$peg['nip'].'</font></td>
 			</tr>
 			<tr>
-				<td align="left" rowspan="3" style="border-top-width: solid; border-left-width: solid; border-right-width: solid;">3</td>
+				<td align="center" rowspan="3" style="border-top-width: solid; border-left-width: solid; border-right-width: solid;">3</td>
 				<td style="border-top-width: solid; border-right-width: solid;">a. Pangkat dan Golongan</td>
 				<td style="border-top-width: solid; border-right-width: solid;"><font style="text-transform:none">'.$peg['pangkat'].' / ' .$gol['gol'].'</font></td>
 			</tr>

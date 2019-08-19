@@ -363,8 +363,15 @@ $html ='<table border="0" cellspacing="0" cellpadding="4">
 				<td style="border-right-width: solid;">'.$data['ket_harian'].'</td>
 			</tr>
 			<tr>
-				<td align="center" style="border-left-width: solid;border-right-width: solid;">4</td>
-				<td>Uang Saku Rapat</td>
+				<td rowspan="4" align="center" style="border-left-width: solid;border-right-width: solid;">4</td>
+				<td colspan="4" style="border-right-width: solid;">Uang Saku Rapat :</td>
+				<td style="border-right-width: solid;"></td>
+				<td style="border-right-width: solid;"></td>
+			</tr>
+			<tr>
+		
+
+				<td>Uang Saku Rapat Halfday</td>
 				<td align="right">'.$data['jml_saku'].'</td>
 				<td>X</td>
 				<td align="right" style="border-right-width: solid;">'.number_format($data['nilai_saku'],0,",",".").'</td>
@@ -372,11 +379,28 @@ $html ='<table border="0" cellspacing="0" cellpadding="4">
 				<td style="border-right-width: solid;">'.$data['ket_saku'].'</td>
 			</tr>
 			<tr>
-				<td align="center" style="border-left-width: solid;border-right-width: solid;">5</td>
-				<td>'.$data['uraian_lain'].'</td>
-				<td align="right">'.$data['jml_lain'].'</td>
+				<td>Uang Saku Rapat Fullday</td>
+				<td align="right">'.$data['jml_saku2'].'</td>
 				<td>X</td>
-				<td align="right" style="border-right-width: solid;">'.number_format($data['nilai_lain'],0,",",".").'</td>
+				<td align="right" style="border-right-width: solid;">'.number_format($data['nilai_saku2'],0,",",".").'</td>
+				<td align="right" style="border-right-width: solid;">'.number_format($data['jml_saku2']*$data['nilai_saku2'],0,",",".").'</td>
+				<td style="border-right-width: solid;">'.$data['ket_saku2'].'</td>
+			</tr>
+			<tr>
+				<td>Uang Saku Rapat Fullboard</td>
+				<td align="right">'.$data['jml_saku3'].'</td>
+				<td>X</td>
+				<td align="right" style="border-right-width: solid;">'.number_format($data['nilai_saku3'],0,",",".").'</td>
+				<td align="right" style="border-right-width: solid;">'.number_format($data['jml_saku3']*$data['nilai_saku3'],0,",",".").'</td>
+				<td style="border-right-width: solid;">'.$data['ket_saku3'].'</td>
+			</tr>
+			<tr>
+			
+				<td align="center" style="border-left-width: solid;border-right-width: solid;">5</td>
+				<td width="210">'.$data['uraian_lain'].'</td>
+				<td width="30" align="right">'.$data['jml_lain'].'</td>
+				<td width="20">X</td>
+				<td width="80" align="right" style="border-right-width: solid;">'.number_format($data['nilai_lain'],0,",",".").'</td>
 				<td align="right" style="border-right-width: solid;">'.number_format($data['jml_lain']*$data['nilai_lain'],0,",",".").'</td>
 				<td style="border-right-width: solid;">'.$data['ket_lain'].'</td>
 			</tr>

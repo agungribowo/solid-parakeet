@@ -296,8 +296,8 @@ $pdf->SetFont('helvetica', '', 9);
 	
 $pagenom = '<table border="0" cellspacing="0" cellpadding="2">
 			<tr>
-				<td width="300" align="center"><font size="10" style="text-transform:uppercase">'.$set['instansi'].'</font></td>	
-				<td width="500"></td>
+				<td width="500" align="left"><font size="10" style="text-transform:uppercase">'.$set['instansi'].'</font></td>	
+				<td width="300"></td>
 				<td width="300"></td>
 			</tr>
 			<tr>
@@ -343,9 +343,9 @@ $pagenom = '<table border="0" cellspacing="0" cellpadding="2">
 				<td width="90" align="center"><b>UANG SAKU</b></td>
 				<td width="90" align="center"><b>HOTEL</b></td>
 				<td width="90" align="center"><b>TRANSPORT</b></td>
-				<td width="90" align="center"><b>LAIN-LAIN</b></td>
+				<td width="90" align="center"><b>REPRESENTATIF</b></td>
 				<td width="90" align="center"><b>JUMLAH</b></td>
-				<td width="80" align="center"><b>TTD</b></td>
+			
 			</tr>
 			<tr>
 				<td align="center"><b>1</b></td>	
@@ -359,7 +359,7 @@ $pagenom = '<table border="0" cellspacing="0" cellpadding="2">
 				<td align="center"><b>9</b></td>	
 				<td align="center"><b>10</b></td>	
 				<td align="center"><b>11</b></td>	
-				<td align="center"><b>12</b></td>	
+			
 			</tr>';
 			$selNom=mysql_query("SELECT * FROM tb_nominatif WHERE id_spd='$id_spd'");
 			$no=1;
@@ -380,13 +380,13 @@ $pagenom = '<table border="0" cellspacing="0" cellpadding="2">
 				<td align="right">'.number_format($tuj['transport'],0,",",".").'</td>	
 				<td align="right">'.number_format($tuj['lain'],0,",",".").'</td>	
 				<td align="right">'.number_format($uang,0,",",".").'</td>	
-				<td></td>
+			
 			</tr>';
 			}
 	$pagenom .='<tr>
 				<td colspan="10" align="center"><b>JUMLAH</b></td>	
 				<td align="right"><b>'.number_format($total_uang,0,",",".").'</b></td>	
-				<td></td>	
+				
 			</tr>
 		</table>
 		<table cellpadding="2" border="0" align="center">

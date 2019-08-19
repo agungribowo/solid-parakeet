@@ -98,6 +98,7 @@
 							<th>Tgl SPD</th>
 							<th>Pegawai</th>
 							<th>Jenis Tujuan</th>
+							<th>User</th>
 							<th width="10%">Rincian / Kwitansi</th>
 						</tr>
 					</thead>
@@ -134,6 +135,12 @@
 									while ($tuj	=mysql_fetch_array($seltuj)){
 									
 									echo $tuj['jenis'];
+								?>
+							</td>
+							<td><?php
+								$pegawai	=mysql_query("SELECT nama_user FROM tb_user WHERE id_user='$spd[id_user]'");
+								$peg	=mysql_fetch_array($pegawai);
+								echo $peg['nama_user'];
 								?>
 							</td>
 							<td class="text-center">

@@ -298,8 +298,8 @@ $pdf->SetFont('helvetica', '', 9);
 	
 $pagenom = '<table border="0" cellspacing="0" cellpadding="2">
 			<tr>
-				<td width="300" align="center"><u><font size="10" style="text-transform:uppercase">'.$set['instansi'].'</font></u></td>	
-				<td width="500"></td>
+				<td width="500" align="left"><u><font size="10" style="text-transform:uppercase">'.$set['instansi'].'</font></u></td>	
+				<td width="300"></td>
 				<td width="300"></td>
 			</tr>
 		</table>
@@ -337,7 +337,7 @@ $pagenom = '<table border="0" cellspacing="0" cellpadding="2">
 				<td width="90" align="center"><b>TRANSPORT</b></td>
 				<td width="90" align="center"><b>LAIN-LAIN</b></td>
 				<td width="90" align="center"><b>JUMLAH</b></td>
-				<td width="80" align="center"><b>TTD</b></td>
+				
 			</tr>
 			<tr>
 				<td align="center"><b>1</b></td>	
@@ -351,7 +351,7 @@ $pagenom = '<table border="0" cellspacing="0" cellpadding="2">
 				<td align="center"><b>9</b></td>	
 				<td align="center"><b>10</b></td>	
 				<td align="center"><b>11</b></td>	
-				<td align="center"><b>12</b></td>	
+			
 			</tr>';
 			
 			$selRin=mysql_query("SELECT * FROM tb_rincian WHERE id_spd='$id_spd'");
@@ -381,18 +381,18 @@ $pagenom = '<table border="0" cellspacing="0" cellpadding="2">
 				<td align="center"><font style="text-transform:none">'.$d2.' '.$m2.' '.$y2.'</font></td>
 				<td align="center">'.$lama.'</td>				
 				<td align="right">'.number_format($harian,0,",",".").'</td>	
-				<td align="right">'.number_format($harian1,0,",",".").'</td>	
-				<td align="right">'.number_format($reprentasi,0,",",".").'</td>	
+				<td align="right">'.number_format($saku,0,",",".").'</td>	
+				<td align="right">'.number_format($inap,0,",",".").'</td>	
 				<td align="right">'.number_format($transport,0,",",".").'</td>	
 				<td align="right">'.number_format($lain,0,",",".").'</td>	
 				<td align="right">'.number_format($rin['total'],0,",",".").'</td>	
-				<td></td>
+			
 				</tr>';
 				}
 	$pagenom .='<tr>
 				<td colspan="10" align="center"><b>JUMLAH</b></td>	
 				<td align="right"><b>'.number_format($total,0,",",".").'</b></td>	
-				<td></td>	
+			
 			</tr>
 		</table>
 		<table cellpadding="2" border="0" align="center">

@@ -298,8 +298,8 @@ $pdf->SetFont('helvetica', '', 9);
 	
 $pagenom = '<table border="0" cellspacing="0" cellpadding="2" style="margin-bottom:40px;">
 			<tr>
-				<td width="300" align="center"><u><font size="10" style="text-transform:uppercase">'.$set['instansi'].'</font></u></td>	
-				<td width="500"></td>
+				<td width="500" align="left"><u><font size="10" style="text-transform:uppercase">'.$set['instansi'].'</font></u></td>	
+				<td width="300"></td>
 				<td width="300"></td>
 			</tr>
 		</table>
@@ -338,7 +338,7 @@ $pagenom = '<table border="0" cellspacing="0" cellpadding="2" style="margin-bott
 				<td width="90" align="center"><b>TRANSPORT</b></td>
 				<td width="90" align="center"><b>LAIN-LAIN</b></td>
 				<td width="90" align="center"><b>JUMLAH</b></td>
-				<td width="80" align="center"><b>TTD</b></td>
+				
 			</tr>
 			<tr>
 				<td align="center"><b>1</b></td>	
@@ -353,7 +353,7 @@ $pagenom = '<table border="0" cellspacing="0" cellpadding="2" style="margin-bott
 				<td align="center"><b>10</b></td>	
 				<td align="center"><b>11</b></td>	
 				<td align="center"><b>12</b></td>	
-				<td align="center"><b>13</b></td>
+				
 			</tr>';
 			$selRin=mysql_query("SELECT * FROM tb_rincian WHERE id_spd='$id_spd'");
 			$no=1;
@@ -389,13 +389,13 @@ $pagenom = '<table border="0" cellspacing="0" cellpadding="2" style="margin-bott
 				<td align="right">'.number_format($transport,0,",",".").'</td>	
 				<td align="right">'.number_format($lain,0,",",".").'</td>	
 				<td align="right">'.number_format($rin['total'],0,",",".").'</td>	
-				<td></td>
+			
 				</tr>';
 				}
 	$pagenom .='<tr>
 				<td colspan="10" align="center"><b>JUMLAH</b></td>	
 				<td align="right"><b>'.number_format($total,0,",",".").'</b></td>	
-				<td></td>	
+			
 			</tr>
 		</table>
 		<table cellpadding="2" border="0" align="center">

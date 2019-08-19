@@ -374,8 +374,8 @@ $html ='<table border="0" cellspacing="0" cellpadding="1">
 			</tr>
 			<tr>
 				<td align="center" style="border-top-width: solid; border-left-width: solid; border-right-width: solid;">2</td>
-				<td style="border-top-width: solid; border-right-width: solid;"><u>Nama / NRP Pegawai yang Melaksanakan Perjalanan Dinas</u><br /><font size="8"><i>Name/Employee Register Number Of the assigned officer</i></font></td>
-				<td style="border-top-width: solid; border-right-width: solid;"><font style="text-transform:none">'.$peg['nama'].' <br/> NIP '.$peg['nip'] .'</font></td>
+				<td style="border-top-width: solid; border-right-width: solid;"><u>Nama Pegawai Pelaksana Perjalanan Dinas</u><br /><font size="8"><i>Name Of the assigned officer</i></font></td>
+				<td style="border-top-width: solid; border-right-width: solid;"><font style="text-transform:none">'.$peg['nama'].' <br/> NIP/NRP '.$peg['nip'] .'</font></td>
 			</tr>
 			<tr>
 				<td align="center" rowspan="3" style="border-top-width: solid; border-left-width: solid; border-right-width: solid;">3</td>

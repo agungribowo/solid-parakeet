@@ -30,9 +30,21 @@
 	$jml_harian			=$_POST['jml_harian'];	
 	$nilai_harian		=$_POST['nilai_harian'];	
 	$ket_harian			=$_POST['ket_harian'];
+
 	$jml_saku			=$_POST['jml_saku'];	
 	$nilai_saku			=$_POST['nilai_saku'];	
 	$ket_saku			=$_POST['ket_saku'];
+	
+	
+	$jml_saku2			=$_POST['jml_saku2'];	
+	$nilai_saku2			=$_POST['nilai_saku2'];	
+	$ket_saku2			=$_POST['ket_saku2'];
+
+	$jml_saku3			=$_POST['jml_saku3'];	
+	$nilai_saku3		=$_POST['nilai_saku3'];	
+	$ket_saku3			=$_POST['ket_saku3'];
+
+	
 	$uraian_lain		=$_POST['uraian_lain'];
 	$jml_lain			=$_POST['jml_lain'];
 	$nilai_lain			=$_POST['nilai_lain'];
@@ -59,9 +71,9 @@
 		$id_satker = $spd['satker'];
 
 		//else{
-		$insert =mysql_query("INSERT INTO tb_rincian (id_rincian, id_satker, id_spd, id_peg, jml_inap, nilai_inap, ket_inap, jml_berangkat, nilai_berangkat, ket_berangkat, jml_kembali, nilai_kembali, ket_kembali, jml_taxi_berangkat, nilai_taxi_berangkat, ket_taxi_berangkat, jml_taxi_kembali, nilai_taxi_kembali, ket_taxi_kembali, jml_harian, nilai_harian, ket_harian, jml_saku, nilai_saku, ket_saku, uraian_lain, jml_lain, nilai_lain, ket_lain, uang_muka, total)
-		VALUES ('$id_rincian', '$id_satker', '$id_spd', '$id_peg', '$jml_inap', '$nilai_inap', '$ket_inap', '$jml_berangkat', '$nilai_berangkat', '$ket_berangkat', '$jml_kembali', '$nilai_kembali', '$ket_kembali', '$jml_taxi_berangkat', '$nilai_taxi_berangkat', '$ket_taxi_berangkat', '$jml_taxi_kembali', '$nilai_taxi_kembali', '$ket_taxi_kembali', '$jml_harian', '$nilai_harian', '$ket_harian', '$jml_saku', '$nilai_saku', '$ket_saku', '$uraian_lain', '$jml_lain', '$nilai_lain', '$ket_lain', '$uang_muka', '$total')");
-			
+			$insert =mysql_query("INSERT INTO tb_rincian (id_rincian, id_user, id_satker, id_spd, id_peg, jml_inap, nilai_inap, ket_inap, jml_berangkat, nilai_berangkat, ket_berangkat, jml_kembali, nilai_kembali, ket_kembali, jml_taxi_berangkat, nilai_taxi_berangkat, ket_taxi_berangkat, jml_taxi_kembali, nilai_taxi_kembali, ket_taxi_kembali, jml_harian, nilai_harian, ket_harian, jml_saku, nilai_saku, ket_saku, jml_saku2, nilai_saku2, ket_saku2, jml_saku3, nilai_saku3, ket_saku3, uraian_lain, jml_lain, nilai_lain, ket_lain, uang_muka, total)
+			VALUES ('$id_rincian', '$id_user', '$id_satker', '$id_spd', '$id_peg', '$jml_inap', '$nilai_inap', '$ket_inap', '$jml_berangkat', '$nilai_berangkat', '$ket_berangkat', '$jml_kembali', '$nilai_kembali', '$ket_kembali', '$jml_taxi_berangkat', '$nilai_taxi_berangkat', '$ket_taxi_berangkat', '$jml_taxi_kembali', '$nilai_taxi_kembali', '$ket_taxi_kembali', '$jml_harian', '$nilai_harian', '$ket_harian', '$jml_saku', '$nilai_saku', '$ket_saku', '$jml_saku2', '$nilai_saku2', '$ket_saku2', '$jml_saku3', '$nilai_saku3', '$ket_saku3', '$uraian_lain', '$jml_lain', '$nilai_lain', '$ket_lain', '$uang_muka', '$total')");
+				
 			if($insert){
 				$_SESSION['pesan'] = "Good! Insert data rincian success ...";
 				header("location:index.php?page=form-view-nominatif");

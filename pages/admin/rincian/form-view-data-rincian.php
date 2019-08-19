@@ -279,4 +279,5 @@
 <script> // 500 = 0,5 s
 	$(document).ready(function(){setTimeout(function(){$(".pesan").fadeIn('slow');}, 500);});
 	setTimeout(function(){$(".pesan").fadeOut('slow');}, 7000);
+	
 </script>

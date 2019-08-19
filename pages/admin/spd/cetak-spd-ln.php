@@ -374,8 +374,8 @@ $html ='<table border="0" cellspacing="0" cellpadding="1">
 			</tr>
 			<tr>
 				<td align="center" style="border-top-width: solid; border-left-width: solid; border-right-width: solid;">2</td>
-				<td style="border-top-width: solid; border-right-width: solid;"><u>Nama / NRP Pegawai yang Melaksanakan Perjalanan Dinas</u><br /><font size="8"><i>Name/Employee Register Number Of the assigned officer</i></font></td>
-				<td style="border-top-width: solid; border-right-width: solid;"><font style="text-transform:none">'.$peg['nama'].' <br/> NIP '.$peg['nip'] .'</font></td>
+				<td style="border-top-width: solid; border-right-width: solid;"><u>Nama Pegawai Pelaksana Perjalanan Dinas</u><br /><font size="8"><i>Name Of the assigned officer</i></font></td>
+				<td style="border-top-width: solid; border-right-width: solid;"><font style="text-transform:none">'.$peg['nama'].' <br/> NIP/NRP '.$peg['nip'] .'</font></td>
 			</tr>
 			<tr>
 				<td align="center" rowspan="3" style="border-top-width: solid; border-left-width: solid; border-right-width: solid;">3</td>
@@ -519,6 +519,7 @@ $page2 = '
 				<td style="border-right-width: solid;">'.$tuj['tujuan'].'</td>
 			</tr>
 			<tr>
+			
 				<td><u>Kepala Kantor</u><br /><font size="8"><i>Head Of Office</i></font></td>
 				<td>:</td>
 				<td>.......................</td>
@@ -527,18 +528,18 @@ $page2 = '
 				<td style="border-right-width: solid;">'.$d2.' '.$m2.' '.$y2.'</td>
 			</tr>
 			<tr>
-			<td colspan="3"></td>
-			<td style="border-right-width: solid;" align="center" colspan="3">'.$ttd['teks'].'</td>
-
+				<td colspan="3"></td>
+				<td style="border-right-width: solid;" align="center" colspan="3">'.$ttd['teks'].'</td>
+				
 			</tr>
 			<tr>
 				<td colspan="3" height="45"></td>
 				<td colspan="3" height="45" style="border-right-width: solid;"></td>
 			</tr>
 			<tr>
-			<td colspan="3" height="25">(.......................................................)</td>
-			<td colspan="3" height="25" align="center" style="border-right-width: solid;"><u>'.$kep['nama'].'</u><br/>NIP '.$kep['nip'].'</td>
-		</tr>
+				<td colspan="3" height="25">(.......................................................)</td>
+				<td colspan="3" height="25" align="center" style="border-right-width: solid;"><u>'.$kep['nama'].'</u><br/>NIP '.$kep['nip'].'</td>
+			</tr>
 			<tr>
 				<td width="20" style="border-top-width: solid; border-left-width: solid;" rowspan="6">III.</td>
 				<td width="140" style="border-top-width: solid;"><u>Tiba di</u><br /><font size="8"><i>Arrival at</i></font></td>
