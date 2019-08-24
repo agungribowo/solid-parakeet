@@ -17,7 +17,7 @@
 	$pejabat		=$_POST['pejabat'];
 	$tingkat_biaya	=$_POST['tingkat_biaya'];
 	$transport		=$_POST['transport'];
-	$ket			=$_POST['ket'];	
+	// $ket			=$_POST['ket'];	
 	$keperluan		=$_POST['keperluan'];	
 	$nomor			=$_POST['nomor'];
 	$no_ppk			=$_POST['no_ppk'];	
@@ -86,7 +86,7 @@
 		}
 		
 		else{
-		$update= mysql_query ("UPDATE tb_spd SET pejabat='$pejabat', tingkat_biaya='$tingkat_biaya', transport='$transport', ket='$ket', keperluan='$keperluan', nomor='$nomer', tgl='$tgl', pegawai='$pegawai', asal='$asal', tujuan='$tujuan', tgl_berangkat='$tgl_berangkat', tgl_kembali='$tgl_kembali', no_sprin='$no_sprin', tgl_sprin='$tgl_sprin', satker='$satker', ta='$ta', ma='$ma', jenis_pengeluaran='$jenis_pengeluaran', semua_peg='$semua_peg' WHERE id_spd='$id_spd' and id_satker='$id_satker'");
+		$update= mysql_query ("UPDATE tb_spd SET pejabat='$pejabat', tingkat_biaya='$tingkat_biaya', transport='$transport', keperluan='$keperluan', nomor='$nomer', tgl='$tgl', pegawai='$pegawai', asal='$asal', tujuan='$tujuan', tgl_berangkat='$tgl_berangkat', tgl_kembali='$tgl_kembali', no_sprin='$no_sprin', tgl_sprin='$tgl_sprin', satker='$satker', ta='$ta', ma='$ma', jenis_pengeluaran='$jenis_pengeluaran', semua_peg='$semua_peg' WHERE id_spd='$id_spd' and id_satker='$id_satker'");
 		
 			$delnom	=mysql_query("DELETE FROM tb_nominatif WHERE id_spd='$id_spd'");
 			$nom	=explode(',', $semua_peg);

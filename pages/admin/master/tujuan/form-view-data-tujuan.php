@@ -59,7 +59,6 @@
 		?>
 	</li>
 	<li><a href="<?php echo $file;?>" class="btn btn-sm btn-success m-b-10" title="Export To Excel"><i class="fa fa-file-excel-o"></i> &nbsp;Export</a></li>
-	<li><a class="btn btn-sm btn-primary m-b-10" data-toggle="modal" data-target="#tujuan"><i class="fa fa-plus-circle"></i> &nbsp;Add Tujuan</a></li>
 </ol>
 <!-- end breadcrumb -->
 <!-- begin page-header -->

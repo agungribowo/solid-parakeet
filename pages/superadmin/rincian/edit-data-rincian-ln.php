@@ -9,7 +9,14 @@
 	include "../../config/koneksi.php";
 	$query	= mysql_query("SELECT * FROM tb_rincian WHERE id_rincian='$id_rincian'");
 	$hasil	= mysql_fetch_array ($query);
-				
+
+	
+	if($hasil['id_user'] != $_SESSION['id_user']) {
+		$_SESSION['pesan'] = "Oops! Tidak dapat mengedit data user lain ...";
+		header("location:index.php?page=form-edit-data-rincian&id_rincian=$id_rincian");
+	}
+		
+	
 	if ($_POST['edit'] == "edit") {
 	$jml_berangkat		=$_POST['jml_berangkat'];	
 	$nilai_berangkat	=$_POST['nilai_berangkat'];	

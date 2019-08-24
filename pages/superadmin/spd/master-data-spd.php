@@ -14,8 +14,8 @@
 	$tingkat_biaya	=$_POST['tingkat_biaya'];
 	$transport		=$_POST['transport'];
 	$pengikut		= implode(',', $_POST['pengikut']);
-	$kelengkapan	= implode(',', $_POST['kelengkapan']);
-	$ket			=$_POST['ket'];	
+	// $kelengkapan	= implode(',', $_POST['kelengkapan']);
+	// $ket			=$_POST['ket'];	
 	$keperluan		=$_POST['keperluan'];	
 	$nomor			=$_POST['nomor'];	
 	$no_ppk			=$_POST['no_ppk'];	
@@ -78,8 +78,8 @@
 		// }
 		
 		else{
-		$insert =mysql_query("INSERT INTO tb_spd (id_spd, id_user, pejabat, tingkat_biaya, transport, pengikut, kelengkapan, ket, keperluan, nomor, tgl, pegawai, asal, tujuan, tgl_berangkat, tgl_kembali, no_sprin, tgl_sprin, satker, ta, ma, jenis_pengeluaran, semua_peg)
-		VALUES ('$id_spd', '$id_user', '$pejabat', '$tingkat_biaya', '$transport', '$pengikut', '$kelengkapan', '$ket', '$keperluan', '$nomer', '$tgl', '$pegawai', '$asal', '$tujuan', '$tgl_berangkat', '$tgl_kembali', '$no_sprin', '$tgl_sprin', '$satker', '$ta', '$ma', '$jenis_pengeluaran', '$semua_peg')");
+		$insert =mysql_query("INSERT INTO tb_spd (id_spd, id_user, pejabat, tingkat_biaya, transport, pengikut,  keperluan, nomor, tgl, pegawai, asal, tujuan, tgl_berangkat, tgl_kembali, no_sprin, tgl_sprin, satker, ta, ma, jenis_pengeluaran, semua_peg)
+		VALUES ('$id_spd', '$id_user', '$pejabat', '$tingkat_biaya', '$transport', '$pengikut', '$keperluan', '$nomer', '$tgl', '$pegawai', '$asal', '$tujuan', '$tgl_berangkat', '$tgl_kembali', '$no_sprin', '$tgl_sprin', '$satker', '$ta', '$ma', '$jenis_pengeluaran', '$semua_peg')");
 			
 			$nom	=explode(',', $semua_peg);
 			foreach ($nom as $listpeg) {

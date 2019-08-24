@@ -113,9 +113,9 @@
 					<tr>
 						<th>No</th>
 						<th>Pegawai</th>
-						<th>Nomor SPD</th>
+						<th>Nomor SPD/No Sprin</th>
 						<th>Tgl SPD</th>
-						<th>No.Sprin</th>
+						<th>Keperluan</th>
 						
 						<th>Tujuan</th>
 						<th>Tgl Berangkat</th>
@@ -139,9 +139,9 @@
 							echo $peg['nama'].' <br> NIP '.$peg['nip'];
 							?>
 						</td>
-						<td><?php echo $spd['nomor'];?></td>
+						<td><?php echo $spd['nomor'].'<br>'.$spd['no_sprin'];?></td>
 						<td><?php echo $d1?>-<?php echo $m1?>-<?php echo $y1?></td>
-						<td><?php echo $spd['no_sprin'];?></td>
+						<td><?php echo $spd['keperluan'];?></td>
 						<td><?php
 							$selTuj	=mysql_query("SELECT * FROM tb_tujuan WHERE id_tujuan='$spd[tujuan]'");
 							$tuj	=mysql_fetch_array($selTuj);

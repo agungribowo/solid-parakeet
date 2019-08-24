@@ -88,7 +88,7 @@
 							<?php
 								$transport = mysql_query("SELECT * FROM tb_transport ORDER BY transport");        
 								echo '<select name="transport" class="default-select2 form-control">';    
-								echo '<option value="">...</option>';    
+							   
 									while ($tra = mysql_fetch_array($transport)) {    
 									echo '<option value="'.$tra['id_transport'].'">'.$tra['transport'].'</option>';    
 									}    
@@ -101,7 +101,7 @@
 								<?php
 									$pegawai = mysql_query("SELECT * FROM tb_pegawai where satker=$id_satker ORDER BY nama ASC");        
 									echo '<select name="pegawai" class="default-select2 form-control">';    
-									echo '<option value="">...</option>';    
+					 
 										while ($peg = mysql_fetch_array($pegawai)) {    
 										echo '<option value="'.$peg['id_peg'].'">'.$peg['nama'].' - '.$peg['nip'].'</option>';    
 										}    
@@ -114,30 +114,15 @@
 							<?php
 								$pengikut = mysql_query("SELECT * FROM tb_pegawai ORDER BY nama");        
 								echo '<select name="pengikut[]" class="default-select2 form-control" multiple="multiple">';    
-								echo '<option value="">...</option>';    
+							
 									while ($peng = mysql_fetch_array($pengikut)) {    
 									echo '<option value="'.$peng['id_peg'].'">'.$peng['nama'].'</option>';    
 									}    
 								echo '</select>';
 							?>
 						</div>
-						<div class="form-group">
-							<label>Kelengkapan</label>
-							<?php
-								$kelengkapan = mysql_query("SELECT * FROM tb_kelengkapan");  
-								
-								echo '<select name="kelengkapan[]" class="default-select2 form-control" multiple="multiple">';    
-								echo '<option value="">...</option>';    
-										while ($kel = mysql_fetch_array($kelengkapan)) {   
-									echo '<option value="'.$kel['id_kelengkapan'].'">'.$kel['uraian'].'</option>';    
-									}    
-								echo '</select>';
-							?>
-						</div>
-						<div class="form-group">
-							<label>Keterangan Lain-lain</label>
-							<textarea name="ket" maxlength="255" class="form-control"></textarea>
-						</div>
+	
+
 						<div class="form-group">
 							<label>Keperluan</label>
 							<textarea name="keperluan" maxlength="255" class="form-control"></textarea>
@@ -186,7 +171,7 @@
 								<?php
 									$tujuan = mysql_query("SELECT * FROM tb_tujuan ORDER BY tujuan");        
 									echo '<select name="tujuan" class="default-select2 form-control">';    
-									echo '<option value="">...</option>';    
+		  
 										while ($tuj = mysql_fetch_array($tujuan)) {    
 										echo '<option value="'.$tuj['id_tujuan'].'">'.$tuj['tujuan'].'</option>';    
 										}    
@@ -233,7 +218,7 @@
 								<?php
 									$satker = mysql_query("SELECT * FROM tb_satker");        
 									echo '<select disabled name="satker" class="default-select2 form-control" style="width:100%">';    
-									echo '<option value="">...</option>';    
+			
 										while ($sat = mysql_fetch_array($satker)) {    
 										
 											if ($sat['id_satker'] == $id_satker)
@@ -251,7 +236,6 @@
 								<?php
 									$tahuna = mysql_query("SELECT * FROM tb_ta where id_satker=$id_satker");        
 									echo '<select name="ta" class="default-select2 form-control" style="width:100%">';    
-									echo '<option value="">...</option>';    
 										while ($ta = mysql_fetch_array($tahuna)) {    
 										echo '<option value="'.$ta['id_ta'].'">'.$ta['tahun'].'</option>';    
 										}    

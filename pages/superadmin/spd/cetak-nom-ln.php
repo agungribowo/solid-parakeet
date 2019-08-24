@@ -334,7 +334,7 @@ $pagenom = '<table border="0" cellspacing="0" cellpadding="2" style="margin-bott
 				<td width="90" align="center"><b>UANG HARIAN 100%</b></td>
 				<td width="90" align="center"><b>UANG HARIAN 40%</b></td>
 				<td width="90" align="center"><b>UANG HARIAN 30%</b></td>
-				<td width="90" align="center"><b>REPRENTASI</b></td>
+				<td width="90" align="center"><b>REPRESENTASI</b></td>
 				<td width="90" align="center"><b>TRANSPORT</b></td>
 				<td width="90" align="center"><b>LAIN-LAIN</b></td>
 				<td width="90" align="center"><b>JUMLAH</b></td>

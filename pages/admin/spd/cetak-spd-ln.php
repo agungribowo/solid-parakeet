@@ -299,17 +299,14 @@ $pdf->SetFont('helvetica', '', 9);
 $head ='
 		<table border="0" cellspacing="0" cellpadding="0">
 			<tr>
-				<td width="290" align="center"><font style="text-transform:uppercase">'.$set['instansi'].'</font></td>	
+				<td width="290" align="center"><font style="text-transform:uppercase;">'.$set['instansi'].' REPUBLIK INDONESIA</font></td>	
 				<td width="330"></td>
 			</tr>
 			<tr>
-				<td align="center"><font style="text-transform:uppercase">'.$set['kota'].'</font></td>	
-				<td></td>
+				<td width="290" align="center"><font style="text-transform:uppercase; font-size: 9px; font-style:italic"><br>NATIONAL COUNTER TERRORISM AGENCY<br>REPUBLIC OF INDONESIA</font></td>	
+				<td width="330"></td>
 			</tr>
-			<tr>
-				<td align="center"><u>'.$set['alamat'].'</u></td>	
-				<td></td>
-			</tr>
+
 		</table>
 		<table border="0" cellspacing="0" cellpadding="0">
 			<tr>

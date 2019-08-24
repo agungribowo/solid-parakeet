@@ -114,30 +114,13 @@
 							<?php
 								$pengikut = mysql_query("SELECT * FROM tb_pegawai ORDER BY nama");        
 								echo '<select name="pengikut[]" class="default-select2 form-control" multiple="multiple">';    
-								echo '<option value="">...</option>';    
 									while ($peng = mysql_fetch_array($pengikut)) {    
 									echo '<option value="'.$peng['id_peg'].'">'.$peng['nama'].'</option>';    
 									}    
 								echo '</select>';
 							?>
 						</div>
-						<div class="form-group">
-							<label>Kelengkapan</label>
-							<?php
-								$kelengkapan = mysql_query("SELECT * FROM tb_kelengkapan");  
-								
-								echo '<select name="kelengkapan[]" class="default-select2 form-control" multiple="multiple">';    
-								echo '<option value="">...</option>';    
-										while ($kel = mysql_fetch_array($kelengkapan)) {   
-									echo '<option value="'.$kel['id_kelengkapan'].'">'.$kel['uraian'].'</option>';    
-									}    
-								echo '</select>';
-							?>
-						</div>
-						<div class="form-group">
-							<label>Keterangan Lain-lain</label>
-							<textarea name="ket" maxlength="255" class="form-control"></textarea>
-						</div>
+		
 						<div class="form-group">
 							<label>Keperluan</label>
 							<textarea name="keperluan" maxlength="255" class="form-control"></textarea>
@@ -186,7 +169,6 @@
 								<?php
 									$tujuan = mysql_query("SELECT * FROM tb_tujuan ORDER BY tujuan");        
 									echo '<select name="tujuan" class="default-select2 form-control">';    
-									echo '<option value="">...</option>';    
 										while ($tuj = mysql_fetch_array($tujuan)) {    
 										echo '<option value="'.$tuj['id_tujuan'].'">'.$tuj['tujuan'].'</option>';    
 										}    
@@ -233,7 +215,6 @@
 								<?php
 									$satker = mysql_query("SELECT * FROM tb_satker");        
 									echo '<select name="satker" class="default-select2 form-control" style="width:100%">';    
-									echo '<option value="">...</option>';    
 										while ($sat = mysql_fetch_array($satker)) {    
 										echo '<option value="'.$sat['id_satker'].'">'.$sat['satker'].'</option>';    
 										}    
@@ -247,10 +228,12 @@
 								<?php
 									$tahuna = mysql_query("SELECT A.id_ta,A.tahun,(SELECT B.satker from tb_satker B where B.id_satker=A.id_satker) as `satker` FROM tb_ta A");        
 									echo '<select name="ta" class="default-select2 form-control" style="width:100%">';    
-									echo '<option value="">...</option>';    
-										while ($ta = mysql_fetch_array($tahuna)) {    
-										echo '<option value="'.$ta['id_ta'].'">'.$ta['tahun'].' - '.$ta['satker'].'</option>';    
-										}    
+									while ($ta = mysql_fetch_array($tahuna)) {    
+										if ($ta['tahun'] == date("Y"))
+										echo '<option selected value="'.$ta['id_ta'].'">'.$ta['tahun'].'</option>';  
+											else 	
+										echo '<option value="'.$ta['id_ta'].'">'.$ta['tahun'].'</option>';    
+									}    
 									echo '</select>';
 								?>
 							</div>

@@ -335,7 +335,7 @@ $pagenom = '<table border="0" cellspacing="0" cellpadding="2">
 				<td width="90" align="center"><b>UANG SAKU</b></td>
 				<td width="90" align="center"><b>HOTEL</b></td>
 				<td width="90" align="center"><b>TRANSPORT</b></td>
-				<td width="90" align="center"><b>LAIN-LAIN</b></td>
+				<td width="100" align="center"><b>REPRESENTASI</b></td>
 				<td width="90" align="center"><b>JUMLAH</b></td>
 				
 			</tr>
@@ -364,7 +364,7 @@ $pagenom = '<table border="0" cellspacing="0" cellpadding="2">
 				$harian	=$rin['jml_harian']*$rin['nilai_harian'];
 				$harian1=$rin['jml_harian1']*$rin['nilai_harian1'];
 				$reprentasi=$rin['jml_reprentasi']*$rin['nilai_reprentasi'];
-				$saku=$rin['jml_saku']*$rin['nilai_saku'];
+				$saku=$rin['jml_saku']*$rin['nilai_saku']+$rin['jml_saku2']*$rin['nilai_saku2']+$rin['jml_saku3']*$rin['nilai_saku3'];
 				$inap=$rin['jml_inap']*$rin['nilai_inap'];
 				$transport=$rin['jml_berangkat']*$rin['nilai_berangkat'] + $rin['jml_kembali']*$rin['nilai_kembali'] + 
 				$rin['jml_taxi_berangkat']*$rin['nilai_taxi_berangkat'] + $rin['jml_taxi_kembali']*$rin['nilai_taxi_kembali'];

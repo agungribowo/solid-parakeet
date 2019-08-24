@@ -172,7 +172,7 @@
 											</tr>
 											<tr>
 												<td></td>
-												<td>Uang Saku Halfday</td>
+												<td>Uang Saku Fullboard</td>
 												<td><?=$data['jml_saku3']?></td>
 												<td>x</td>
 												<td align="right"><?=number_format($data['nilai_saku3'],0,",",".");?></td>

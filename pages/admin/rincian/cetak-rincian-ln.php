@@ -397,7 +397,7 @@ $sign1 = '<table cellpadding="2" border="0">
 			</tr>
 			<tr>
 				<td></td>
-				<td align="center">'.$ttdrin['teks1'].'</td>
+				<td align="center">'.$ttdrin['teks2'].'</td>
 				<td></td>
 				<td align="center">Yang Menerima</td>
 				<td></td>
@@ -411,14 +411,14 @@ $sign1 = '<table cellpadding="2" border="0">
 			</tr>
 			<tr>
 				<td></td>
-				<td align="center"><font style="text-transform:none;"><u>'.$kepkiri['nama'].'</u></font></td>
+				<td align="center"><font style="text-transform:none;"><u>'.$kepkanan['nama'].'</u></font></td>
 				<td></td>
 				<td align="center"><font style="text-transform:none;"><u>'.$peg['nama'].'</u></font></td>
 				<td></td>
 			</tr>
 			<tr>
 				<td></td>
-				<td align="center"><font style="text-transform:none;">NIP '.$kepkiri['nip'].'</font></td>
+				<td align="center"><font style="text-transform:none;">NIP '.$kepkanan['nip'].'</font></td>
 				<td></td>';
 				if(stristr($peg['pangkat'], 'jend') === FALSE){
 		$sign1 .='<td align="center"><font style="text-transform:none;">NIP '.$peg['nip'].'</font></td>';
@@ -476,7 +476,7 @@ $sign2 = '<table cellpadding="2" border="0">
 				<td width="5%"></td>
 				<td width="35%"></td>
 				<td width="20%"></td>
-				<td width="35%" align="center">'.$ttdrin['teks2'].'</td>
+				<td width="35%" align="center">'.$ttdrin['teks1'].'</td>
 				<td width="5%"></td>
 			</tr>
 			<tr>
@@ -490,14 +490,14 @@ $sign2 = '<table cellpadding="2" border="0">
 				<td></td>
 				<td></td>
 				<td></td>
-				<td align="center"><font style="text-transform:none;"><u>'.$kepkanan['nama'].'</u></font></td>
+				<td align="center"><font style="text-transform:none;"><u>'.$kepkiri['nama'].'</u></font></td>
 				<td></td>
 			</tr>
 			<tr>
 				<td></td>
 				<td></td>
 				<td></td>
-				<td align="center"><font style="text-transform:none;"> NIP '.$kepkanan['nip'].'</font></td>
+				<td align="center"><font style="text-transform:none;"> NIP '.$kepkiri['nip'].'</font></td>
 				<td></td>
 			</tr>
 			<tr>
