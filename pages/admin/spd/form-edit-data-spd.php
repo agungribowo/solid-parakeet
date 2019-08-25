@@ -82,10 +82,7 @@
 								echo '</select>';
 							?>
 						</div>
-						<div class="form-group">
-							<label>Keterangan Lain-lain</label>
-							<textarea name="ket" maxlength="255" class="form-control"><?=$data['ket']?></textarea>
-						</div>
+
 						<div class="form-group">
 							<label>Keperluan</label>
 							<textarea name="keperluan" maxlength="255" class="form-control"><?=$data['keperluan']?></textarea>

@@ -237,7 +237,10 @@
 									$tahuna = mysql_query("SELECT * FROM tb_ta where id_satker=$id_satker");        
 									echo '<select name="ta" class="default-select2 form-control" style="width:100%">';    
 										while ($ta = mysql_fetch_array($tahuna)) {    
-										echo '<option value="'.$ta['id_ta'].'">'.$ta['tahun'].'</option>';    
+											if ($ta['tahun'] == date("Y"))
+											echo '<option selected value="'.$ta['id_ta'].'">'.$ta['tahun'].'</option>';  
+												else 	
+											echo '<option value="'.$ta['id_ta'].'">'.$ta['tahun'].'</option>';    
 										}    
 									echo '</select>';
 								?>
