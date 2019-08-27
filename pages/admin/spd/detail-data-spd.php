@@ -139,7 +139,8 @@
 										</tr>
 										<tr>
 											<td class="field">Pengikut &nbsp;
-											<?php if ($spd['id_user'] == $_SESSION['id_user']) {?>
+											
+											<?php if ($data['id_user'] == $_SESSION['id_user']) {?>
 												<a type="button" class="btn btn-danger btn-icon btn-xs" href="index.php?page=form-edit-pengikut&id_spd=<?=$id_spd?>" title="edit pengikut"><i class="fa fa-pencil fa-lg"></i></a>
 											<?php }?>
 											</td>
@@ -194,7 +195,8 @@
 						}
 					?>
 					<br />
-					<?php if ($spd['id_user'] == $_SESSION['id_user']) {?>
+
+					<?php if ($data['id_user'] == $_SESSION['id_user']) {?>
 					<a type="button" class="btn btn-danger btn-icon btn-xs" href="index.php?page=form-edit-lengkap&id_spd=<?=$id_spd?>" title="edit kelengkapan"><i class="fa fa-pencil fa-lg"></i></a>
 					<?php }?>
 				</div>
