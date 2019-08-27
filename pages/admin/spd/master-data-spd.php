@@ -84,8 +84,8 @@
 			
 			$nom	=explode(',', $semua_peg);
 			foreach ($nom as $listpeg) {
-				$values="($id_spd, '$listpeg', '$satker')";
-				$insertnom	=mysql_query("INSERT INTO tb_nominatif (id_spd, pegawai, id_satker) VALUES ".$values);
+				$values="($id_spd, '$listpeg', '$satker', '$id_user')";
+				$insertnom	=mysql_query("INSERT INTO tb_nominatif (id_spd, pegawai, id_satker, id_user) VALUES ".$values);
 			}
 													
 			if($insert){
