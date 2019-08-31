@@ -73,10 +73,10 @@
 			header("location:index.php?page=form-master-data-spd");
 		}
 		
-		// else if(in_array($pegawai, $semua_pengikut)){
-		// 	$_SESSION['pesan'] = "Oops! Duplikat daftar nominatif pegawai ...";
-		// 	header("location:index.php?page=form-master-data-spd");
-		// }
+		else if(in_array($pegawai, $semua_pengikut)){
+			$_SESSION['pesan'] = "Oops! Duplikat daftar nominatif pegawai ...";
+			header("location:index.php?page=form-master-data-spd");
+		}
 		
 		else{
 		$insert =mysql_query("INSERT INTO tb_spd (id_spd, id_user, id_satker, pejabat, tingkat_biaya, transport, pengikut, keperluan, nomor, tgl, pegawai, asal, tujuan, tgl_berangkat, tgl_kembali, no_sprin, tgl_sprin, satker, ta, ma, jenis_pengeluaran, semua_peg)
