@@ -371,7 +371,7 @@ $html ='<table border="0" cellspacing="0" cellpadding="1">
 			<tr>
 				<td align="center" style="border-top-width: solid; border-left-width: solid; border-right-width: solid;">2</td>
 				<td style="border-top-width: solid; border-right-width: solid;"><u>Nama Pegawai Pelaksana Perjalanan Dinas</u><br /><font size="8"><i>Name Of the assigned officer</i></font></td>
-				<td style="border-top-width: solid; border-right-width: solid;"><font style="text-transform:none">'.$peg['nama'].' <br/> NIP/NRP '.$peg['nip'] .'</font></td>
+				<td style="border-top-width: solid; border-right-width: solid;"><font style="text-transform:none">'.$peg['nama'].' <br/> '.$peg['nip_val'].' '.$peg['nip'] .'</font></td>
 			</tr>
 			<tr>
 				<td align="center" rowspan="3" style="border-top-width: solid; border-left-width: solid; border-right-width: solid;">3</td>
@@ -481,7 +481,7 @@ $sign = '<table cellpadding="0" border="0" align="center">
 			<tr>
 				<td></td>
 				<td></td>
-				<td align="center"><font style="text-transform:none;">NIP/NRP '.$kep['nip'].'</font></td>
+				<td align="center"><font style="text-transform:none;">'.$kep['nip_val'].' '.$kep['nip'].'</font></td>
 			</tr>
 		</table>';
 $pdf->writeHTML($sign, true, false, false, false, '');
@@ -646,8 +646,8 @@ $page2 = '
 				<td colspan="3" align="center" style="border-right-width: solid;"><font style="text-transform:none;"><u>'.$kepkanan['nama'].'</u></font></td>
 			</tr>
 			<tr>
-				<td colspan="3" align="center" style="border-bottom-width: solid;"><font style="text-transform:none;"> NIP/NRP '.$kepkiri['nip'].'</font></td>
-				<td colspan="3" align="center" style="border-right-width: solid; border-bottom-width: solid;"><font style="text-transform:none;">NIP/NRP '.$kepkanan['nip'].'</font></td>
+				<td colspan="3" align="center" style="border-bottom-width: solid;"><font style="text-transform:none;"> '.$kepkiri['nip_val'].' '.$kepkiri['nip'].'</font></td>
+				<td colspan="3" align="center" style="border-right-width: solid; border-bottom-width: solid;"><font style="text-transform:none;">'.$kepkanan['nip_val'].' '.$kepkanan['nip'].'</font></td>
 			</tr>
 		</table>';
 $pdf->writeHTML($page2, true, false, false, false, '');

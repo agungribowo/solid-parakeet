@@ -418,10 +418,10 @@ $sign1 = '<table cellpadding="2" border="0">
 			</tr>
 			<tr>
 				<td></td>
-				<td align="center"><font style="text-transform:none;">NIP/NRP '.$kepkanan['nip'].'</font></td>
+				<td align="center"><font style="text-transform:none;">'.$kepkanan['nip_val'].' '.$kepkanan['nip'].'</font></td>
 				<td></td>';
 				if(stristr($peg['pangkat'], 'jend') === FALSE){
-		$sign1 .='<td align="center"><font style="text-transform:none;">NIP/NRP '.$peg['nip'].'</font></td>';
+		$sign1 .='<td align="center"><font style="text-transform:none;">'.$peg['nip_val'].' '.$peg['nip'].'</font></td>';
 				}
 				else{
 		$sign1 .='<td align="center"><font style="text-transform:none;">'.$peg['pangkat'].'</font></td>';		
@@ -497,7 +497,7 @@ $sign2 = '<table cellpadding="2" border="0">
 				<td></td>
 				<td></td>
 				<td></td>
-				<td align="center"><font style="text-transform:none;"> NIP/NRP '.$kepkiri['nip'].'</font></td>
+				<td align="center"><font style="text-transform:none;"> '.$kepkiri['nip_val'].' '.$kepkiri['nip'].'</font></td>
 				<td></td>
 			</tr>
 			<tr>

@@ -126,7 +126,7 @@
 						<td><?php
 							$selPeg	=mysql_query("SELECT * FROM tb_pegawai WHERE id_peg='$spd[pegawai]'");
 							$peg	=mysql_fetch_array($selPeg);
-							echo $peg['nama'].' <br> NIP/NRP '.$peg['nip'];
+							echo $peg['nama'].' <br> '.$peg['nip_val'].' '.$peg['nip'];
 							?>
 						</td>
 						<td><?php echo $spd['nomor'].'<br>'.$spd['no_sprin'];?></td>

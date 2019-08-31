@@ -359,8 +359,8 @@ $html ='<table border="0" cellspacing="0" cellpadding="2">
 			</tr>
 			<tr>
 				<td align="center" style="border-top-width: solid; border-left-width: solid; border-right-width: solid;">2</td>
-				<td style="border-top-width: solid; border-right-width: solid;">Nama Pegawai Pelaksana Perjalanan Dinas<br/>NIP/NRP </td>
-				<td style="border-top-width: solid; border-right-width: solid;"><font style="text-transform:none">'.$peg['nama'].' <br/> NIP/NRP '.$peg['nip'].'</font></td>
+				<td style="border-top-width: solid; border-right-width: solid;">Nama Pegawai Pelaksana Perjalanan Dinas<br/>'.$peg['nip_val'].' </td>
+				<td style="border-top-width: solid; border-right-width: solid;"><font style="text-transform:none">'.$peg['nama'].' <br/> '.$peg['nip_val'].' '.$peg['nip'].'</font></td>
 			</tr>
 			<tr>
 				<td align="center" rowspan="3" style="border-top-width: solid; border-left-width: solid; border-right-width: solid;">3</td>
@@ -470,7 +470,7 @@ $sign = '<table cellpadding="0" border="0" align="center">
 			<tr>
 				<td></td>
 				<td></td>
-				<td align="center"><font style="text-transform:none;">NIP/NRP '.$kep['nip'].'</font></td>
+				<td align="center"><font style="text-transform:none;">'.$kep['nip_val'].' '.$kep['nip'].'</font></td>
 			</tr>
 		</table>';
 $pdf->writeHTML($sign, true, false, false, false, '');
@@ -509,7 +509,7 @@ $page2 = '<table cellpadding="0" border="0" align="center">
 				<td colspan="3" height="45" style="border-right-width: solid;"></td>
 			</tr>
 			<tr>
-				<td colspan="3" height="25" style="border-right-width: solid;" align="center"><u>'.$kep['nama'].'</u><br>NIP/NRP '.$kep['nip'].'</td>
+				<td colspan="3" height="25" style="border-right-width: solid;" align="center"><u>'.$kep['nama'].'</u><br>'.$kep['nip_val'].' '.$kep['nip'].'</td>
 			</tr>
 			<tr>
 				<td width="20" style="border-top-width: solid; border-left-width: solid;" rowspan="6">II.</td>
@@ -649,8 +649,8 @@ $page2 = '<table cellpadding="0" border="0" align="center">
 				<td colspan="3" align="center" style="border-right-width: solid;"><font style="text-transform:none;"><u>'.$kepkanan['nama'].'</u></font></td>
 			</tr>
 			<tr>
-				<td colspan="3" align="center"><font style="text-transform:none;">NIP/NRP '.$kepkiri['nip'].'</font></td>
-				<td colspan="3" align="center" style="border-right-width: solid;"><font style="text-transform:none;">NIP/NRP '.$kepkanan['nip'].'</font></td>
+				<td colspan="3" align="center"><font style="text-transform:none;">'.$kepkiri['nip_val'].' '.$kepkiri['nip'].'</font></td>
+				<td colspan="3" align="center" style="border-right-width: solid;"><font style="text-transform:none;">'.$kepkanan['nip_val'].' '.$kepkanan['nip'].'</font></td>
 			</tr>
 			<tr>
 				<td style="border-top-width: solid; border-left-width: solid;">VI.</td>

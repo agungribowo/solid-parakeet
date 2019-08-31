@@ -123,7 +123,7 @@
 									while ($rownom = mysql_fetch_array($nompeg)) { 
 										$pegawai = mysql_query("SELECT * FROM tb_pegawai WHERE id_peg='$rownom[pegawai]'");
 										while ($rowpeg = mysql_fetch_array($pegawai)) {
-										echo '<option value="'.$rowpeg['id_peg'].'">'.$rowpeg['nama'].' - NIP/NRP '.$rowpeg['nip'].'</option>';    
+										echo '<option value="'.$rowpeg['id_peg'].'">'.$rowpeg['nama'].' - '.$rowpeg['nip_val'].' '.$rowpeg['nip'].'</option>';    
 										}    
 									}    
 									echo '</select>';

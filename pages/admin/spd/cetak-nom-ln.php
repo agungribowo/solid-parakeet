@@ -430,9 +430,9 @@ $pagenom = '<table border="0" cellspacing="0" cellpadding="2" style="margin-bott
 				<td align="center"><font style="text-transform:none;"><b><u>'.$kepn2['nama'].'</u></b></font></td>
 			</tr>
 			<tr>
-				<td align="center"><font style="text-transform:none;"> NIP/NRP '.$kepn1['nip'].'</font></td>
+				<td align="center"><font style="text-transform:none;"> '.$kepn1['nip_val'].' '.$kepn1['nip'].'</font></td>
 				<td></td>
-				<td align="center"><font style="text-transform:none;">NIP/NRP '.$kepn2['nip'].'</font></td>
+				<td align="center"><font style="text-transform:none;">'.$kepn2['nip_val'].' '.$kepn2['nip'].'</font></td>
 			</tr>
 		</table>';
 $pdf->writeHTML($pagenom, true, false, false, false, '');
