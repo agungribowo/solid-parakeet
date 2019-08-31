@@ -399,7 +399,7 @@ $html ='<table border="0" cellspacing="0" cellpadding="2">
 			$rows	=mysql_num_rows($selPeng)+1;
 			$html .='<tr>
 				<td align="center" rowspan="'.$rows.'" style="border-top-width: solid; border-left-width: solid; border-right-width: solid;">8</td>
-				<td style="border-top-width: solid; border-right-width: solid; border-bottom-width: solid;">Pengikut : &nbsp; &nbsp; &nbsp; &nbsp; Nama / NIP</td>
+				<td style="border-top-width: solid; border-right-width: solid; border-bottom-width: solid;">Pengikut : &nbsp; &nbsp; &nbsp; &nbsp; Nama - NIP/NRP</td>
 				<td align="center" style="border-top-width: solid; border-right-width: solid; border-bottom-width: solid;">Jabatan </td>
 			</tr>';
 			$no=1;
@@ -470,7 +470,7 @@ $sign = '<table cellpadding="0" border="0" align="center">
 			<tr>
 				<td></td>
 				<td></td>
-				<td align="center"><font style="text-transform:none;">NIP '.$kep['nip'].'</font></td>
+				<td align="center"><font style="text-transform:none;">NIP/NRP '.$kep['nip'].'</font></td>
 			</tr>
 		</table>';
 $pdf->writeHTML($sign, true, false, false, false, '');
@@ -509,7 +509,7 @@ $page2 = '<table cellpadding="0" border="0" align="center">
 				<td colspan="3" height="45" style="border-right-width: solid;"></td>
 			</tr>
 			<tr>
-				<td colspan="3" height="25" style="border-right-width: solid;" align="center"><u>'.$kep['nama'].'</u><br>NIP '.$kep['nip'].'</td>
+				<td colspan="3" height="25" style="border-right-width: solid;" align="center"><u>'.$kep['nama'].'</u><br>NIP/NRP '.$kep['nip'].'</td>
 			</tr>
 			<tr>
 				<td width="20" style="border-top-width: solid; border-left-width: solid;" rowspan="6">II.</td>
@@ -649,8 +649,8 @@ $page2 = '<table cellpadding="0" border="0" align="center">
 				<td colspan="3" align="center" style="border-right-width: solid;"><font style="text-transform:none;"><u>'.$kepkanan['nama'].'</u></font></td>
 			</tr>
 			<tr>
-				<td colspan="3" align="center"><font style="text-transform:none;">NIP '.$kepkiri['nip'].'</font></td>
-				<td colspan="3" align="center" style="border-right-width: solid;"><font style="text-transform:none;">NIP '.$kepkanan['nip'].'</font></td>
+				<td colspan="3" align="center"><font style="text-transform:none;">NIP/NRP '.$kepkiri['nip'].'</font></td>
+				<td colspan="3" align="center" style="border-right-width: solid;"><font style="text-transform:none;">NIP/NRP '.$kepkanan['nip'].'</font></td>
 			</tr>
 			<tr>
 				<td style="border-top-width: solid; border-left-width: solid;">VI.</td>

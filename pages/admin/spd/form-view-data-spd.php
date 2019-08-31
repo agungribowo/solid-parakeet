@@ -19,7 +19,7 @@
 	$sheet->setCellValue("B3", "ID");
 	$sheet->setCellValue("C3", "NOMOR SPD");
 	$sheet->setCellValue("D3", "TANGGAL");
-	$sheet->setCellValue("E3", "PEGAWAI / NIP");
+	$sheet->setCellValue("E3", "PEGAWAI - NIP/NRP");
 	$sheet->setCellValue("F3", "KEPERLUAN");
 	$sheet->setCellValue("G3", "ASAL");
 	$sheet->setCellValue("H3", "TUJUAN");

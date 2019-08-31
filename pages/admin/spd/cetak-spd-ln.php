@@ -482,7 +482,7 @@ $sign = '<table cellpadding="0" border="0" align="center">
 			<tr>
 				<td></td>
 				<td></td>
-				<td align="center"><font style="text-transform:none;">NIP '.$kep['nip'].'</font></td>
+				<td align="center"><font style="text-transform:none;">NIP/NRP '.$kep['nip'].'</font></td>
 			</tr>
 		</table>';
 $pdf->writeHTML($sign, true, false, false, false, '');
@@ -647,8 +647,8 @@ $page2 = '
 				<td colspan="3" align="center" style="border-right-width: solid;"><font style="text-transform:none;"><u>'.$kepkanan['nama'].'</u></font></td>
 			</tr>
 			<tr>
-				<td colspan="3" align="center" style="border-bottom-width: solid;"><font style="text-transform:none;"> NIP '.$kepkiri['nip'].'</font></td>
-				<td colspan="3" align="center" style="border-right-width: solid; border-bottom-width: solid;"><font style="text-transform:none;">NIP '.$kepkanan['nip'].'</font></td>
+				<td colspan="3" align="center" style="border-bottom-width: solid;"><font style="text-transform:none;"> NIP/NRP '.$kepkiri['nip'].'</font></td>
+				<td colspan="3" align="center" style="border-right-width: solid; border-bottom-width: solid;"><font style="text-transform:none;">NIP/NRP '.$kepkanan['nip'].'</font></td>
 			</tr>
 		</table>';
 $pdf->writeHTML($page2, true, false, false, false, '');

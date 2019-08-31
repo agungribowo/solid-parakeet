@@ -256,7 +256,7 @@ $head ='<table border="0" cellspacing="0" cellpadding="2">
 			</tr>
 			<tr>
 				<td></td>	
-				<td>NIP</td>	
+				<td>NIP/NRP</td>	
 				<td>:</td>
 				<td><font style="text-transform:uppercase">'.$peg['nip'].'</font></td>
 			</tr>
@@ -366,10 +366,10 @@ $sign = '<table cellpadding="2" border="0">
 			</tr>
 			<tr>
 				<td></td>
-				<td align="center"><font style="text-transform:uppercase;">NIP '.$kep['nip'].'</font></td>
+				<td align="center"><font style="text-transform:uppercase;">NIP/NRP '.$kep['nip'].'</font></td>
 				<td></td>';
 				if(stristr($peg['pangkat'], 'jend') === FALSE){
-		$sign .='<td align="center"><font style="text-transform:uppercase;">NIP '.$peg['nip'].'</font></td>';
+		$sign .='<td align="center"><font style="text-transform:uppercase;">NIP/NRP '.$peg['nip'].'</font></td>';
 				}
 				else{
 		$sign .='<td align="center"><font style="text-transform:uppercase;">'.$peg['pangkat'].'</font></td>';		
