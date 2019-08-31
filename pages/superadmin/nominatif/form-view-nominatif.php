@@ -73,7 +73,7 @@
 <?php
 	include "../../config/koneksi.php";
 	$id_satker = $_SESSION['id_satker'];
-	$query	=mysql_query("SELECT * FROM tb_nominatif where id_satker = $id_satker ORDER BY id_spd DESC");
+	$query	=mysql_query("SELECT * FROM tb_nominatif ORDER BY id_spd DESC");
 ?>
 <div class="row">
 	<!-- begin col-12 -->
