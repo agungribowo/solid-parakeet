@@ -8,6 +8,13 @@
 	else {
 		die ("Error. No ID Selected! ");	
 	}
+
+	if(!isset($_SESSION['id_user'])){
+		die("<b>Oops!</b> Access Failed.
+			<p>Sistem Logout. Anda harus melakukan Login kembali.</p>
+			<button type='button' onclick=location.href='../../'>Back</button>");
+	}
+	
 	
 	if ($_POST['save'] == "save") {
 	$pejabat		=$_POST['pejabat'];

@@ -6,6 +6,14 @@
 	else {
 		die ("Error. No Kode Selected! ");	
 	}
+
+	if(!isset($_SESSION['id_user'])){
+		die("<b>Oops!</b> Access Failed.
+			<p>Sistem Logout. Anda harus melakukan Login kembali.</p>
+			<button type='button' onclick=location.href='../../'>Back</button>");
+	}
+	
+	
 	include "../../config/koneksi.php";
 	$query	= mysql_query("SELECT * FROM tb_spd WHERE id_spd='$id_spd'");
 	$hasil	= mysql_fetch_array ($query);
