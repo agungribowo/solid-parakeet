@@ -399,7 +399,7 @@ $html ='<table border="0" cellspacing="0" cellpadding="2">
 			$rows	=mysql_num_rows($selPeng)+1;
 			$html .='<tr>
 				<td align="center" rowspan="'.$rows.'" style="border-top-width: solid; border-left-width: solid; border-right-width: solid;">8</td>
-				<td style="border-top-width: solid; border-right-width: solid; border-bottom-width: solid;">Pengikut : &nbsp; &nbsp; &nbsp; &nbsp; Nama - NIP/NRP</td>
+				<td style="border-top-width: solid; border-right-width: solid; border-bottom-width: solid;">Pengikut : &nbsp; &nbsp; &nbsp; &nbsp; Nama</td>
 				<td align="center" style="border-top-width: solid; border-right-width: solid; border-bottom-width: solid;">Jabatan </td>
 			</tr>';
 			$no=1;
@@ -407,7 +407,7 @@ $html ='<table border="0" cellspacing="0" cellpadding="2">
 			$ikut	=mysql_query("SELECT * FROM tb_pegawai WHERE id_peg='$peng[pegawai]'");
 			$selikut	=mysql_fetch_array($ikut);
 			$html .='<tr>
-				<td style="border-right-width: solid;"> <font style="text-transform:none">'.$no++.'. '.$selikut['nama'].' /  '.$selikut['nip'].'</font></td>	
+				<td style="border-right-width: solid;"> <font style="text-transform:none">'.$no++.'. '.$selikut['nama'].'</font></td>	
 				<td style="border-right-width: solid;"><font style="text-transform:none">'.$selikut['jab'].'</font></td>	
 			</tr>';
 			}
