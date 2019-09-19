@@ -419,7 +419,7 @@ $html ='<table border="0" cellspacing="0" cellpadding="1">
 			$ikut	=mysql_query("SELECT * FROM tb_pegawai WHERE id_peg='$peng[pegawai]'");
 			$selikut	=mysql_fetch_array($ikut);
 			$html .='<tr>
-				<td style="border-right-width: solid;"> <font style="text-transform:none">'.$no++.'. '.$selikut['nama'].' / '.$selikut['nip'].'</font></td>	
+				<td style="border-right-width: solid;"> <font style="text-transform:none">'.$no++.'. '.$selikut['nama'].'</font></td>	
 				<td style="border-right-width: solid;"><font style="text-transform:none">'.$selikut['jab'].'</font></td>	
 			</tr>';
 			}
