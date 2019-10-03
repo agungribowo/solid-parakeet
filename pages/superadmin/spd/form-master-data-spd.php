@@ -197,7 +197,7 @@
 						<div class="form-group">
 							<label class="col-md-4 control-label">No. Referensi</label>
 							<div class="col-md-8">
-								<input type="text" name="no_sprin" maxlength="24" class="form-control" />
+								<input type="text" name="no_sprin" maxlength="256" class="form-control" />
 							</div>
 						</div>
 						<div class="form-group">
