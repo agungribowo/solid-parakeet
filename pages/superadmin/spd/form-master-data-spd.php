@@ -39,7 +39,7 @@
 
 	
 		$id_satker = $_SESSION['id_satker'];
-		$qry   = mysql_query("SELECT nomor FROM tb_spd ORDER BY id_spd desc LIMIT 2");
+		$qry   = mysql_query("SELECT nomor FROM tb_spd ORDER BY id_spd desc LIMIT 1");
 		$data  = mysql_fetch_array($qry);
 		list($x,$y)	=explode ("/",$data['nomor']);
   	list($x1,$x2)	=explode ("-",$x);
@@ -51,7 +51,7 @@
 		
 		$id_satker = $_SESSION['id_satker'];
 		$qry2 = mysql_query("SELECT id_satker, no_ppk, id_ppk FROM tb_satker");        
-		$satker		=mysql_fetch_array($qry2);
+		$satker = mysql_fetch_array($qry2);
 		$id_ppk = $satker['id_ppk'];
 
 		$qry3 = mysql_query("SELECT * FROM tb_pegawai WHERE id_peg = '$id_ppk'");        

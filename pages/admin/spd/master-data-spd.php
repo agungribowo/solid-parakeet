@@ -50,10 +50,10 @@
 	
 	$semua_pengikut =explode(',', $pengikut);
 	
-	list($ynom,$mnom)	=explode ("-",$tgl);
-	$nomer	="SPD-"."$nomor"."/PPK."."$no_ppk"."/"."$mnom"."/$ynom";
+	// list($ynom,$mnom)	=explode ("-",$tgl);
+	// $nomer	="SPD-"."$nomor"."/PPK."."$no_ppk"."/"."$mnom"."/$ynom";
 	
-	$cekno	=mysql_num_rows (mysql_query("SELECT nomor FROM tb_spd WHERE nomor='$nomer'"));
+	// $cekno	=mysql_num_rows (mysql_query("SELECT nomor FROM tb_spd WHERE nomor='$nomer'"));
 	//
 	// $kunci	=mysql_num_rows (mysql_query("SELECT pegawai, tgl_berangkat, tgl_kembali FROM tb_spd WHERE pegawai='$_POST[pegawai]' AND tgl_berangkat <='$tgl_berangkat' AND tgl_kembali >='$tgl_berangkat'"));
 	//
@@ -69,10 +69,10 @@
 			$_SESSION['pesan'] = "Oops! Please fill all column ...";
 			header("location:index.php?page=form-master-data-spd");
 		}
-		else if($cekno > 0) {
-			$_SESSION['pesan'] = "Oops! Duplikat data ...";
-			header("location:index.php?page=form-master-data-spd");
-		}
+		// else if($cekno > 0) {
+		// 	$_SESSION['pesan'] = "Oops! Duplikat data ...";
+		// 	header("location:index.php?page=form-master-data-spd");
+		// }
 		
 		else if($qrycek > 0) {
 			$_SESSION['pesan'] = "Oops! Pegawai dan/atau pengikut masih dalam perjalan dinas ...";
@@ -85,6 +85,17 @@
 		}
 		
 		else{
+		$qry   = mysql_query("SELECT nomor FROM tb_spd WHERE id_satker = '$id_satker' ORDER BY nomor desc LIMIT 1");
+		$data  = mysql_fetch_array($qry);
+		list($x,$y)	=explode ("/",$data['nomor']);
+		list($x1,$x2)	=explode ("-",$x);
+		list($y1,$y2)	=explode (".",$y);
+		$x3 = (int)$x2 + 1;
+		$x4 = str_pad($x3, 3, '0', STR_PAD_LEFT); 
+
+		list($ynom,$mnom)	=explode ("-",$tgl);
+		$nomer	="SPD-"."$nomor"."/PPK."."$no_ppk"."/"."$mnom"."/$ynom";
+
 		$insert =mysql_query("INSERT INTO tb_spd (id_spd, id_user, id_satker, pejabat, tingkat_biaya, transport, pengikut, keperluan, nomor, tgl, pegawai, asal, tujuan, tgl_berangkat, tgl_kembali, no_sprin, tgl_sprin, satker, ta, ma, jenis_pengeluaran, semua_peg)
 		VALUES ('$id_spd', '$id_user', '$id_satker', '$pejabat', '$tingkat_biaya', '$transport', '$pengikut', '$keperluan', '$nomer', '$tgl', '$pegawai', '$asal', '$tujuan', '$tgl_berangkat', '$tgl_kembali', '$no_sprin', '$tgl_sprin', '$satker', '$ta', '$ma', '$jenis_pengeluaran', '$semua_peg')");
 			

@@ -33,8 +33,7 @@
 	$tgl_berangkat	=$_POST['tgl_berangkat'];	
 	$tgl_kembali	=$_POST['tgl_kembali'];	
 	$no_sprin		=$_POST['no_sprin'];	
-	$tgl_sprin		=$_POST['tgl_sprin'];	
-	$satker			=$_SESSION['id_satker'];	
+	$tgl_sprin		=$_POST['tgl_sprin'];		
 	$id_user 		=$_SESSION['id_user'];
 	$ta				=$_POST['ta'];	
 	$ma				=$_POST['ma'];	
@@ -50,10 +49,10 @@
 	
 	$semua_pengikut =explode(',', $pengikut);
 	
-	list($ynom,$mnom)	=explode ("-",$tgl);
-	$nomer	="SPD-"."$nomor"."/PPK."."$no_ppk"."/"."$mnom"."/$ynom";
+	// list($ynom,$mnom)	=explode ("-",$tgl);
+	// $nomer	="SPD-"."$nomor"."/PPK."."$no_ppk"."/"."$mnom"."/$ynom";
 	
-	$cekno	=mysql_num_rows (mysql_query("SELECT nomor FROM tb_spd WHERE nomor='$nomer'"));
+	// $cekno	=mysql_num_rows (mysql_query("SELECT nomor FROM tb_spd WHERE nomor='$nomer'"));
 	//
 
 	if (strlen($pengikut)>0) {
@@ -69,10 +68,10 @@
 			$_SESSION['pesan'] = "Oops! Please fill all column ...";
 			header("location:index.php?page=form-master-data-spd");
 		}
-		else if($cekno > 0) {
-			$_SESSION['pesan'] = "Oops! Duplikat data ...";
-			header("location:index.php?page=form-master-data-spd");
-		}
+		// else if($cekno > 0) {
+		// 	$_SESSION['pesan'] = "Oops! Duplikat data ...";
+		// 	header("location:index.php?page=form-master-data-spd");
+		// }
 		
 		else if($qrycek > 0) {
 			$_SESSION['pesan'] = "Oops! Pegawai dan/atau pengikut masih dalam perjalan dinas ...";
@@ -85,12 +84,24 @@
 		}
 		
 		else{
+
+		$qry   = mysql_query("SELECT nomor FROM tb_spd WHERE id_satker = '$id_satker' ORDER BY nomor desc LIMIT 1");
+		$data  = mysql_fetch_array($qry);
+		list($x,$y)	=explode ("/",$data['nomor']);
+		list($x1,$x2)	=explode ("-",$x);
+		list($y1,$y2)	=explode (".",$y);
+		$x3 = (int)$x2 + 1;
+		$x4 = str_pad($x3, 3, '0', STR_PAD_LEFT); 
+
+		list($ynom,$mnom)	=explode ("-",$tgl);
+		$nomer	="SPD-"."$nomor"."/PPK."."$no_ppk"."/"."$mnom"."/$ynom";
+
 		$insert =mysql_query("INSERT INTO tb_spd (id_spd, id_user, pejabat, tingkat_biaya, transport, pengikut,  keperluan, nomor, tgl, pegawai, asal, tujuan, tgl_berangkat, tgl_kembali, no_sprin, tgl_sprin, satker, ta, ma, jenis_pengeluaran, semua_peg)
-		VALUES ('$id_spd', '$id_user', '$pejabat', '$tingkat_biaya', '$transport', '$pengikut', '$keperluan', '$nomer', '$tgl', '$pegawai', '$asal', '$tujuan', '$tgl_berangkat', '$tgl_kembali', '$no_sprin', '$tgl_sprin', '$satker', '$ta', '$ma', '$jenis_pengeluaran', '$semua_peg')");
+		VALUES ('$id_spd', '$id_user', '$pejabat', '$tingkat_biaya', '$transport', '$pengikut', '$keperluan', '$nomer', '$tgl', '$pegawai', '$asal', '$tujuan', '$tgl_berangkat', '$tgl_kembali', '$no_sprin', '$tgl_sprin', '$id_satker', '$ta', '$ma', '$jenis_pengeluaran', '$semua_peg')");
 			
 			$nom	=explode(',', $semua_peg);
 			foreach ($nom as $listpeg) {
-				$values="($id_spd, '$listpeg', '$satker', '$id_user')";
+				$values="($id_spd, '$listpeg', '$id_satker', '$id_user')";
 				$insertnom	=mysql_query("INSERT INTO tb_nominatif (id_spd, pegawai, id_satker, id_user) VALUES ".$values);
 			}
 													

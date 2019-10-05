@@ -39,12 +39,11 @@
 
 	
 		$id_satker = $_SESSION['id_satker'];
-		$qry   = mysql_query("SELECT nomor FROM tb_spd WHERE id_satker = '$id_satker' ORDER BY id_spd desc LIMIT 2");
+		$qry   = mysql_query("SELECT nomor FROM tb_spd WHERE id_satker = '$id_satker' ORDER BY nomor desc LIMIT 1");
 		$data  = mysql_fetch_array($qry);
 		list($x,$y)	=explode ("/",$data['nomor']);
-  	list($x1,$x2)	=explode ("-",$x);
+  	    list($x1,$x2)	=explode ("-",$x);
 		list($y1,$y2)	=explode (".",$y);
-
 		$x3 = (int)$x2 + 1;
 		$x4 = str_pad($x3, 3, '0', STR_PAD_LEFT); 
 
