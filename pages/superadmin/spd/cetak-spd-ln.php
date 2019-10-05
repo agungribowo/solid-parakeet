@@ -362,7 +362,7 @@ $head ='
 		</table>';	
 $pdf->writeHTML($head, true, false, false, false, '');
 
-$html ='<table border="0" cellspacing="0" cellpadding="1">
+$html ='<table border="0" cellspacing="0" cellpadding="2">
 			<tr>
 				<td align="center" width="30" style="border-top-width: solid; border-left-width: solid; border-right-width: solid;">1</td>
 				<td width="290" style="border-top-width: solid; border-right-width: solid;"><u>Pejabat yang Memberi Perintah</u><br /><font size="8"><i>Authorizing Officer</i></font></td>

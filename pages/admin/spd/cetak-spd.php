@@ -13,7 +13,7 @@ class MYPDF extends TCPDF {
     }
 }
 
-$pdf = new MYPDF('P', 'mm', 'A4', true, 'UTF-8', false);
+$pdf = new MYPDF('P', 'mm', 'F4', true, 'UTF-8', false);
 
 // set document information
 $pdf->SetCreator(PDF_CREATOR);
@@ -351,7 +351,7 @@ $head ='<table border="0" cellspacing="0" cellpadding="2">
 		</table>';	
 $pdf->writeHTML($head, true, false, false, false, '');
 
-$html ='<table border="0" cellspacing="0" cellpadding="2">
+$html ='<table border="0" cellspacing="0" cellpadding="5">
 			<tr>
 				<td align="center" width="30" style="border-top-width: solid; border-left-width: solid; border-right-width: solid;">1</td>
 				<td width="290" style="border-top-width: solid; border-right-width: solid;">Pejabat yang Memberi Perintah</td>
