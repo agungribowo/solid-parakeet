@@ -58,9 +58,11 @@
 	$sumtaxi_kembali	=$jml_taxi_kembali * $nilai_taxi_kembali;	
 	$sumharian			=$jml_harian * $nilai_harian;
 	$sumsaku			=$jml_saku * $nilai_saku;
+	$sumsaku2			=$jml_saku2 * $nilai_saku2;
+	$sumsaku3			=$jml_saku3 * $nilai_saku3;
 	$sumlain			=$jml_lain * $nilai_lain;
 
-	$total				=$suminap+$sumberangkat+$sumkembali+$sumtaxi_berangkat+$sumtaxi_kembali+$sumharian+$sumsaku+$sumlain;
+	$total				=$suminap+$sumberangkat+$sumkembali+$sumtaxi_berangkat+$sumtaxi_kembali+$sumharian+$sumsaku+$sumlain+$sumsaku2+$sumsaku3;
 	
 		//if (empty($_POST['jml_inap']) || empty($_POST['nilai_inap']) || empty($_POST['jml_berangkat']) || empty($_POST['nilai_berangkat']) || empty($_POST['jml_kembali']) || empty($_POST['nilai_kembali'])) {
 			//$_SESSION['pesan'] = "Oops! Please fill all column ...";
