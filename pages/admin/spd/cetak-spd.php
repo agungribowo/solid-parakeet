@@ -395,8 +395,8 @@ $html ='<table border="0" cellspacing="0" cellpadding="5">
 				<td style="border-top-width: solid; border-right-width: solid;">a. Lamanya Perjalanan Dinas<br />b. Tanggal Berangkat<br />c. Tanggal Harus Kembali/Tiba di Tempat Baru *)</td>
 				<td style="border-top-width: solid; border-right-width: solid;">a. '.$lama.' ('.(terbilang($lama)).') Hari<br />b. '.$d2.' '.$m2.' '.$y2.'<br />c. '.$d3.' '.$m3.' '.$y3.'</td>
 			</tr>';
-			$selPeng=mysql_query("SELECT * FROM tb_nominatif WHERE id_spd='$id_spd' AND pegawai!='$data[pegawai]' ORDER BY id_nominatif");
-			$rows	=mysql_num_rows($selPeng)+1;
+			$selPeng=mysql_query("SELECT * FROM tb_nominatif WHERE id_spd='$id_spd' ORDER BY id_nominatif");
+			$rows	=mysql_num_rows($selPeng);
 			$html .='<tr>
 				<td align="center" rowspan="'.$rows.'" style="border-top-width: solid; border-left-width: solid; border-right-width: solid;">8</td>
 				<td style="border-top-width: solid; border-right-width: solid; border-bottom-width: solid;">Pengikut : &nbsp; &nbsp; &nbsp; &nbsp; Nama</td>
@@ -404,6 +404,7 @@ $html ='<table border="0" cellspacing="0" cellpadding="5">
 			</tr>';
 			$no=1;
 			while($peng=mysql_fetch_array($selPeng)) {
+				if ($peng['pegawai'] !== $data['pegawai']) {
 			$ikut	=mysql_query("SELECT * FROM tb_pegawai WHERE id_peg='$peng[pegawai]'");
 			$selikut	=mysql_fetch_array($ikut);
 			$html .='<tr>
@@ -411,6 +412,7 @@ $html ='<table border="0" cellspacing="0" cellpadding="5">
 				<td style="border-right-width: solid;"><font style="text-transform:none">'.$selikut['jab'].'</font></td>	
 			</tr>';
 			}
+		}
 	$html .='<tr>
 				<td align="center" rowspan="2" style="border-top-width: solid; border-left-width: solid; border-right-width: solid;">9</td>
 				<td style="border-top-width: solid; border-right-width: solid;">Pembebanan Anggaran</td>
