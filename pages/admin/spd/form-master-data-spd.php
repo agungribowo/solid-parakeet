@@ -98,7 +98,7 @@
 							<label>Pegawai</label>
 							<!-- <div class="col-md-8"> -->
 								<?php
-									$pegawai = mysql_query("SELECT * FROM tb_pegawai where satker=$id_satker ORDER BY nama ASC");        
+									$pegawai = mysql_query("SELECT * FROM tb_pegawai ORDER BY nama ASC");        
 									echo '<select name="pegawai" class="default-select2 form-control">';    
 					 
 										while ($peg = mysql_fetch_array($pegawai)) {    
