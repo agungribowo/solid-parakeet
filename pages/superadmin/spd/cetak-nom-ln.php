@@ -393,7 +393,7 @@ $pagenom = '<table border="0" cellspacing="0" cellpadding="2" style="margin-bott
 				</tr>';
 				}
 	$pagenom .='<tr>
-				<td colspan="10" align="center"><b>JUMLAH</b></td>	
+				<td colspan="11" align="center"><b>JUMLAH</b></td>	
 				<td align="right"><b>'.number_format($total,0,",",".").'</b></td>	
 			
 			</tr>
