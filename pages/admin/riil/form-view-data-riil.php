@@ -76,7 +76,7 @@
 								<?php
 								$seltuj	=mysql_query("SELECT * FROM tb_tujuan WHERE id_tujuan='$spd[tujuan]'");
 								while ($tuj	=mysql_fetch_array($seltuj)){
-								if ($spd['id_user'] == $_SESSION['id_user']) {
+								if ($rii['id_user'] === $_SESSION['id_user']) {
 									if ($tuj['jenis'] =="Luar Negeri"){
 										echo"<a type='button' class='btn btn-success btn-icon btn-sm' href='index.php?page=detail-data-riil-ln&id_riil=";echo$rii['id_riil'];echo"' title='detail'><i class='fa fa-folder-open-o fa-lg'></i></a>
 										<a type='button' class='btn btn-info btn-icon btn-sm' href='index.php?page=form-edit-data-riil-ln&id_riil=";echo$rii['id_riil'];echo"' title='edit'><i class='fa fa-pencil fa-lg'></i></a>";
