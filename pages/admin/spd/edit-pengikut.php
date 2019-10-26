@@ -9,7 +9,7 @@
 	include "../../config/koneksi.php";
 
 	$id_satker = $_SESSION['id_satker'];
-
+	$id_user 		=$_SESSION['id_user'];
 	$query	= mysql_query("SELECT * FROM tb_spd WHERE id_spd='$id_spd'");
 	$hasil	= mysql_fetch_array ($query);
 	$pegawai=$hasil['pegawai'];
@@ -43,11 +43,11 @@
 		else{
 		$update= mysql_query ("UPDATE tb_spd SET pengikut='$pengikut', semua_peg='$semua_peg' WHERE id_spd='$id_spd' and id_satker='$id_satker'");
 		
-			$delnom	=mysql_query("DELETE FROM tb_nominatif WHERE id_spd='$id_spd'");
+			$delnom	=mysql_query("DELETE FROM tb_nominatif WHERE id_spd='$id_spd' and id_satker='$id_satker'");
 			$nom	=explode(',', $semua_peg);
 			foreach ($nom as $listpeg) {
-				$values="($id_spd, '$listpeg')";
-				$insertnom	=mysql_query("INSERT INTO tb_nominatif (id_spd, pegawai) VALUES ".$values);
+				$values="($id_spd, '$listpeg', '$id_satker', '$id_user')";
+				$insertnom	=mysql_query("INSERT INTO tb_nominatif (id_spd, pegawai, id_satker, id_user) VALUES ".$values);
 			}
 			
 		if($update){

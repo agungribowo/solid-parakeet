@@ -145,7 +145,7 @@
 							</td>
 							<td class="text-center">
 								<?php									
-									if ($tuj['jenis'] =="Dalam Kota"){
+									// if ($tuj['jenis'] =="Dalam Kota"){
 										$cekkwi	=mysql_num_rows (mysql_query("SELECT id_spd, id_peg FROM tb_kwitansi WHERE id_spd='$nom[id_spd]' AND id_peg='$nom[pegawai]'"));
 										if($cekkwi > 0) {
 											echo"<a type='button' class='btn btn-white active btn-icon btn-sm' href='javascript:;' title='kwitansi telah dibuat'><i class='ion-navigate fa-lg'></i></a>";
@@ -153,8 +153,10 @@
 										else{
 											echo"<a type='button' class='btn btn-success btn-icon btn-sm' data-toggle='modal' data-target='#Kwi";echo $nom['id_spd'];echo$nom['pegawai'];echo$lama;echo"' title='create kwitansi'><i class='ion-navigate fa-lg'></i></a>";
 										}
-									}
-									else{
+									// }
+									// else{
+										echo "  ";
+										
 										$cekrinci	=mysql_num_rows (mysql_query("SELECT id_spd, id_peg FROM tb_rincian WHERE id_spd='$nom[id_spd]' AND id_peg='$nom[pegawai]'"));
 										if($cekrinci > 0) {
 											echo"<a type='button' class='btn btn-white active btn-icon btn-sm' href='javascript:;' title='rincian telah dibuat'><i class='ion-ios-paper-outline fa-lg'></i></a>";
@@ -167,7 +169,7 @@
 												echo"<a type='button' class='btn btn-danger btn-icon btn-sm' href='index.php?page=form-master-data-rincian&id_spd=";echo $nom['id_spd'];echo"&id_peg=";echo $nom['pegawai'];echo"' title='create rincian'><i class='ion-ios-paper-outline fa-lg'></i></a>";
 											}
 										}
-									}
+									// }
 									}
 								?>
 							</td>
