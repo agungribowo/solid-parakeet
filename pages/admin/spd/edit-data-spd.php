@@ -63,10 +63,10 @@
 		  }
 	}
 	
-	list($ynom,$mnom)	=explode ("-",$tgl);
-	$nomer	="SPD-"."$nomor"."/PPK."."$no_ppk"."/"."$mnom"."/$ynom";
+	// list($ynom,$mnom)	=explode ("-",$tgl);
+	// $nomer	="SPD-"."$nomor"."/PPK."."$no_ppk"."/"."$mnom"."/$ynom";
 	
-	$cekno	=mysql_num_rows (mysql_query("SELECT nomor FROM tb_spd WHERE nomor='$nomer' AND nomor!='$notno' and id_satker='$id_satker' "));
+	// $cekno	=mysql_num_rows (mysql_query("SELECT nomor FROM tb_spd WHERE nomor='$nomer' AND nomor!='$notno' and id_satker='$id_satker' "));
 	
 	$aqr = "SELECT A.id_nominatif FROM tb_nominatif A INNER JOIN tb_spd B ON B.id_spd=A.id_spd WHERE A.pegawai=$pegawai AND B.tgl BETWEEN $tgl_berangkat AND $tgl_kembali";
 	$qrycek = mysql_num_rows(mysql_query($aqr));
@@ -77,10 +77,10 @@
 			$_SESSION['pesan'] = "Oops! Please fill all column ...";
 			header("location:index.php?page=form-edit-data-spd&id_spd=$id_spd");
 		}		
-		else if($cekno > 0) {
-			$_SESSION['pesan'] = "Oops! Duplikat data ...";
-			header("location:index.php?page=form-edit-data-spd&id_spd=$id_spd");
-		}
+		// else if($cekno > 0) {
+		// 	$_SESSION['pesan'] = "Oops! Duplikat data ...";
+		// 	header("location:index.php?page=form-edit-data-spd&id_spd=$id_spd");
+		// }
 		else if($qrycek > 0) {
 			$_SESSION['pesan'] = "Oops! Pegawai bersangkutan masih dalam perjalan dinas ...";
 			header("location:index.php?page=form-edit-data-spd&id_spd=$id_spd");
@@ -99,7 +99,7 @@
 		}
 		
 		else{
-		$update= mysql_query ("UPDATE tb_spd SET pejabat='$pejabat', tingkat_biaya='$tingkat_biaya', transport='$transport', keperluan='$keperluan', nomor='$nomer', tgl='$tgl', pegawai='$pegawai', asal='$asal', tujuan='$tujuan', tgl_berangkat='$tgl_berangkat', tgl_kembali='$tgl_kembali', no_sprin='$no_sprin', tgl_sprin='$tgl_sprin', satker='$satker', ta='$ta', ma='$ma', jenis_pengeluaran='$jenis_pengeluaran', semua_peg='$semua_peg' WHERE id_spd='$id_spd' and id_satker='$id_satker'");
+		$update= mysql_query ("UPDATE tb_spd SET pejabat='$pejabat', tingkat_biaya='$tingkat_biaya', transport='$transport', keperluan='$keperluan', tgl='$tgl', pegawai='$pegawai', asal='$asal', tujuan='$tujuan', tgl_berangkat='$tgl_berangkat', tgl_kembali='$tgl_kembali', no_sprin='$no_sprin', tgl_sprin='$tgl_sprin', satker='$satker', ta='$ta', ma='$ma', jenis_pengeluaran='$jenis_pengeluaran', semua_peg='$semua_peg' WHERE id_spd='$id_spd' and id_satker='$id_satker'");
 		
 			$delnom	=mysql_query("DELETE FROM tb_nominatif WHERE id_spd='$id_spd'");
 			$nom	=explode(',', $semua_peg);
