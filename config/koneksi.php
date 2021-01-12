@@ -1,6 +1,6 @@
 <?php
 	date_default_timezone_set("Asia/jakarta");
-	$Open = mysql_connect("localhost","root","mysql");
+	$Open = mysql_connect("localhost","root","");
 		if (!$Open){
 		die ("Koneksi ke Engine MySQL Gagal !<br>");
 		}
@@ -8,4 +8,7 @@
 		if (!$Koneksi){
 		die ("Koneksi ke Database Gagal !");
 		}
+
+
+		error_reporting(0);
 ?>

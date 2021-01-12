@@ -22,7 +22,7 @@ if($_SESSION['hak_akses']!="Superadmin"){
 <!--<![endif]-->
 <head>
 	<meta charset="utf-8" />
-	<title>Aplikasi Sistem Informasi Perjalanan Dinas | SIPerDis Version 1.0</title>
+	<title>Aplikasi Sistem Informasi Perjalanan Dinas | Siap Jaldis 1.0</title>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="keywords" />
@@ -83,7 +83,7 @@ if($_SESSION['hak_akses']!="Superadmin"){
 			<div class="container-fluid">
 				<!-- begin mobile sidebar expand / collapse button -->
 				<div class="navbar-header">
-					<a href="./" class="navbar-brand"><span class="navbar-logo"><i class="fa fa-taxi"></i></span> &nbsp;<b>SiPerDis BNPT</b></a>
+					<a href="./" class="navbar-brand"><span class="navbar-logo"><i class="fa fa-plane"></i></span> &nbsp;<b>Siap Jaldis BNPT</b></a>
 					<button type="button" class="navbar-toggle" data-click="sidebar-toggled">
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>

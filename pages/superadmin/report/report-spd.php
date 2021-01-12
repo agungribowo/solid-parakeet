@@ -1,3 +1,27 @@
+<style type="text/css">
+.dtHorizontalExampleWrapper {
+max-width: 600px;
+margin: 0 auto;
+}
+#dtHorizontalExample th, td {
+white-space: nowrap;
+}
+
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before {
+bottom: .5em;
+}
+</style>
+
+
 <!-- begin breadcrumb -->
 <ol class="breadcrumb pull-right">
 	<li>
@@ -43,18 +67,21 @@
 	<!-- begin profile-section -->
 	<div class="profile-section">
 		<div class="panel-body">
-			<table id="datatable" class="table table-striped table-bordered nowrap datatable-multi-row" width="100%">
+	<table id="dtHorizontalExample" class="table table-striped table-bordered table-sm" cellspacing="0"
+  width="100%">
 				<thead>
 					<tr>
-						<th width="4%">No</th>
-						<th>Pegawai</th>
-						<th>Nomor SPD/No Sprin</th>
-						<th>Tgl SPD</th>
-						<th>Keperluann</th>
-						<th>Tujuan</th>
-						<th>Tgl Berangkat</th>
-						<th width="4%">Jumlah Hari</th>
-						<th width="4%">Unit</th>
+						<th class="th-sm" width="4%">No</th>
+						<th class="th-sm" >Pegawai</th>
+						<th class="th-sm" >Nomor SPD/No Sprin</th>
+						<th class="th-sm" >Tgl SPD</th>
+						<th class="th-sm" >Keperluann</th>
+						<th class="th-sm" >Tujuan</th>
+						<th class="th-sm" >Tgl Berangkat</th>
+						<th class="th-sm" >Tgl Kembali</th>
+						<th class="th-sm" >Status</th>
+						<th class="th-sm" width="4%">Jumlah Hari</th>
+						<th class="th-sm" width="4%">Unit</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -86,6 +113,20 @@
 							?>
 						</td>
 						<td><?php echo $d2?>-<?php echo $m2?>-<?php echo $y2?></td>
+						<td><?php echo date("d-m-Y",strtotime( $spd['tgl_kembali']));?></td>
+						<td><?php 
+						$paymentDate = date('Y-m-d');
+						$paymentDate=date('Y-m-d', strtotime($paymentDate));
+
+						$contractDateBegin = date('Y-m-d', strtotime($spd['tgl_kembali']));
+						
+						if ($paymentDate >= $contractDateBegin){
+    					$lala = "Selesai";
+						}else{
+   						 $lala =  "Proses";  
+							}
+
+						echo $lala ;?></td>
 						<td><?php
 							$brkt	=new DateTime($spd['tgl_berangkat']);
 							$kmbl	=new DateTime($spd['tgl_kembali']);
@@ -167,4 +208,16 @@
 	});
 });
 
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function () {
+$('#dtHorizontalExample').DataTable({
+"scrollY": "50vh",
+"scrollCollapse": true,
+"scrollX": true
+});
+$('.dataTables_length').addClass('bs-select');
+});
 </script>
